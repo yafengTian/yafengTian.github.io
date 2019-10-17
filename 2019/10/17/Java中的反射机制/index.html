@@ -56,29 +56,31 @@
   };
 </script>
 
-  <meta name="description" content="扶摇直上九千里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农峰酱">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="一、什么叫Java反射机制？Java中的反射机制是指在运行状态中，对于任意一个类，能够动态获取这个类中的属性和方法；对于任意一个对象，都能够任意调用它的属性和方法。这种动态获取类的信息以及动态调用对象方法的功能称为Java的反射机制。总结就是：反射可以实现运行时知道任意一个类的属性和方法。二、Java当中为什么需要反射机制？工作原理是什么？1、要明白为什么需要反射机制，首先就得先清楚两个概念：（1">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的反射机制">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;17&#x2F;Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱">
-<meta property="og:description" content="扶摇直上九千里">
+<meta property="og:description" content="一、什么叫Java反射机制？Java中的反射机制是指在运行状态中，对于任意一个类，能够动态获取这个类中的属性和方法；对于任意一个对象，都能够任意调用它的属性和方法。这种动态获取类的信息以及动态调用对象方法的功能称为Java的反射机制。总结就是：反射可以实现运行时知道任意一个类的属性和方法。二、Java当中为什么需要反射机制？工作原理是什么？1、要明白为什么需要反射机制，首先就得先清楚两个概念：（1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-17T07:52:46.613Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>码农峰酱</title>
+  <title>Java中的反射机制 | 码农峰酱</title>
   
 
 
@@ -265,10 +267,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,8 +285,9 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
+            Java中的反射机制
             
-            <a href="/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">Java中的反射机制</a>
+
           
         </h1>
 
@@ -318,7 +321,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一、什么叫Java反射机制？<br>Java中的反射机制是指在运行状态中，对于任意一个类，能够动态获取这个类中的属性和方法；对于任意一个对象，都能够任意调用它的属性和方法。这种动态获取类的信息以及动态调用对象方法的功能称为Java的反射机制。总结就是：反射可以实现运行时知道任意一个类的属性和方法。<br>二、Java当中为什么需要反射机制？工作原理是什么？<br>1、要明白为什么需要反射机制，首先就得先清楚两个概念：<br>（1）静态编译：在编译时就必须要知道变量得类型才能编译通过，比如C++,Java等编译之前必须清楚的指明数据类型；<br>（2）动态编译：显然和上述概念相反，即在编译时不需要立即知道变量的类型，在运行时指明其类型就行。<br>1、有上述概念之后便有了静态语言和动态语言之分，而Java，C++就是典型的静态语言，而Python，Ruby等则为动态语言。但是Java虽是一个静态的解释型语言，但其也有动态的性质——反射（Reflection）。用在Java身上指的是运行时加载，探知，使用编译期间未知的classes。<br>2、下面探讨一下反射是如何在仅知道类名的情况下能够知道整个类的完整构造的（方法，属性等）。<br>首先我们都清楚，Java是一种解释型的语言，即编译器首先将源码编译成class文件，然后虚拟机（JVM）再将class文件解释给目标计算机执行。而这里所说的反射机制操作的其实就是源码编译之后的class文件。首先将class文件加载到内存，然后从该文件中解剖出某个具体类的构造函数，方法和属性，从而完全知道某个类的所有构造。下面给出一个简易的demo及字节码文件。<br>demo源码:<br>package com.tyf.reflect;</p>
+        <p>一、什么叫Java反射机制？<br>Java中的反射机制是指在运行状态中，对于任意一个类，能够动态获取这个类中的属性和方法；对于任意一个对象，都能够任意调用它的属性和方法。这种动态获取类的信息以及动态调用对象方法的功能称为Java的反射机制。总结就是：反射可以实现运行时知道任意一个类的属性和方法。<br>二、Java当中为什么需要反射机制？工作原理是什么？<br>1、要明白为什么需要反射机制，首先就得先清楚两个概念：<br>（1）静态编译：在编译时就必须要知道变量得类型才能编译通过，比如C++,Java等编译之前必须清楚的指明数据类型；<br>（2）动态编译：显然和上述概念相反，即在编译时不需要立即知道变量的类型，在运行时指明其类型就行。<br>1、有上述概念之后便有了静态语言和动态语言之分，而Java，C++就是典型的静态语言，而Python，Ruby等则为动态语言。但是Java虽是一个静态的解释型语言，但其也有动态的性质——反射（Reflection）。用在Java身上指的是运行时加载，探知，使用编译期间未知的classes。<br>2、下面探讨一下反射是如何在仅知道类名的情况下能够知道整个类的完整构造的（方法，属性等）。<br>首先我们都清楚，Java是一种解释型的语言，即编译器首先将源码编译成class文件，然后虚拟机（JVM）再将class文件解释给目标计算机执行。而这里所说的反射机制操作的其实就是源码编译之后的class文件。首先将class文件加载到内存，然后从该文件中解剖出某个具体类的构造函数，方法和属性，从而完全知道某个类的所有构造。下面给出一个简易的demo及字节码文件。<br>demo源码:<br>package com.tyf.reflect;</p>
 <p>import java.lang.reflect.Field;<br>import java.lang.reflect.Method;</p>
 <p>/*<br> *@Author:yafeng<br> *@Date:2019/10/11<br> *@Time:21:24</p>
 <ul>
@@ -371,105 +374,74 @@ System.out.println(name);</code></pre><p>   }catch (Exception e){</p>
 }</code></pre><p>  }catch (Exception e){<br>      e.printStackTrace();<br>  }<br>}</p>
 <p>执行结果：<br>tom<br>100</p>
 
-        
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/hello-world/">
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="亚峰 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="亚峰 支付宝">
+        <p>支付宝</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="亚峰">
-      <meta itemprop="description" content="扶摇直上九千里">
-      <meta itemprop="image" content="/uploads/avatar.png#/images/avatar.gif">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="码农峰酱">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+      
+
+      <footer class="post-footer">
           
             
-            <a href="/2019/10/17/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
           
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-17 10:15:29" itemprop="dateCreated datePublished" datetime="2019-10-17T10:15:29+08:00">2019-10-17</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <div class="post-tags">
+            
+              <a href="/tags/Java/" rel="tag"># Java</a>
+            
+          </div>
+        
 
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/17/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
       </footer>
+    
   </article>
   
   
   
 
-    
   </div>
-
-  
-
 
 
           </div>
@@ -486,6 +458,11 @@ System.out.println(name);</code></pre><p>   }catch (Exception e){</p>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
