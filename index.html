@@ -414,6 +414,15 @@
 
           
           
+             <span id="/2019/10/19/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/" class="leancloud_visitors" data-flag-title="模拟大数除法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           <!--
           
@@ -598,6 +607,15 @@
 
           
           
+             <span id="/2019/10/17/%E5%8F%98%E9%87%8F%E5%9C%A8Java%E4%B8%AD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="leancloud_visitors" data-flag-title="变量在Java中的运行顺序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           <!--
           
@@ -781,6 +799,15 @@
           
 
           
+          
+             <span id="/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="计算两个日期之间的天数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           <!--
@@ -1947,6 +1974,74 @@ show_date_time();
 
 
   
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'dy7JqO4h4E8heX5XYbAFhjKa-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'dy7JqO4h4E8heX5XYbAFhjKa-gzGzoHsz',
+                'X-LC-Key': '85NM33BWIkbq4yDhKoiGYA09',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
 
   
 
