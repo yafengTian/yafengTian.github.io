@@ -5,9 +5,9 @@
   <subtitle>深居秦岭脚下的码农峰酱</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yafengshuanger.cn/"/>
   <updated>2019-10-19T13:28:30.376Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yafengshuanger.cn/</id>
   
   <author>
     <name>亚峰</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>模拟大数除法</title>
-    <link href="http://yoursite.com/2019/10/19/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/10/19/模拟大数除法/</id>
+    <link href="http://yafengshuanger.cn/2019/10/19/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/"/>
+    <id>http://yafengshuanger.cn/2019/10/19/模拟大数除法/</id>
     <published>2019-10-19T13:06:47.000Z</published>
     <updated>2019-10-19T13:28:30.376Z</updated>
     
@@ -32,21 +32,21 @@
     </summary>
     
     
-      <category term="C++" scheme="http://yoursite.com/categories/C/"/>
+      <category term="C++" scheme="http://yafengshuanger.cn/categories/C/"/>
     
-      <category term="PAT乙级" scheme="http://yoursite.com/categories/C/PAT%E4%B9%99%E7%BA%A7/"/>
+      <category term="PAT乙级" scheme="http://yafengshuanger.cn/categories/C/PAT%E4%B9%99%E7%BA%A7/"/>
     
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+      <category term="C++" scheme="http://yafengshuanger.cn/tags/C/"/>
     
-      <category term="PAT乙级" scheme="http://yoursite.com/tags/PAT%E4%B9%99%E7%BA%A7/"/>
+      <category term="PAT乙级" scheme="http://yafengshuanger.cn/tags/PAT%E4%B9%99%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>变量在Java中的运行顺序</title>
-    <link href="http://yoursite.com/2019/10/17/%E5%8F%98%E9%87%8F%E5%9C%A8Java%E4%B8%AD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
-    <id>http://yoursite.com/2019/10/17/变量在Java中的运行顺序/</id>
+    <link href="http://yafengshuanger.cn/2019/10/17/%E5%8F%98%E9%87%8F%E5%9C%A8Java%E4%B8%AD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
+    <id>http://yafengshuanger.cn/2019/10/17/变量在Java中的运行顺序/</id>
     <published>2019-10-17T13:45:19.000Z</published>
     <updated>2019-10-17T13:54:34.945Z</updated>
     
@@ -59,19 +59,19 @@
     </summary>
     
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://yafengshuanger.cn/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://yafengshuanger.cn/tags/Java/"/>
     
-      <category term="面试知识点" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <category term="面试知识点" scheme="http://yafengshuanger.cn/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>计算两个日期之间的天数</title>
-    <link href="http://yoursite.com/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"/>
-    <id>http://yoursite.com/2019/10/17/Java中的反射机制/</id>
+    <link href="http://yafengshuanger.cn/2019/10/17/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"/>
+    <id>http://yafengshuanger.cn/2019/10/17/Java中的反射机制/</id>
     <published>2019-10-17T07:49:34.000Z</published>
     <updated>2019-10-17T13:56:32.541Z</updated>
     
@@ -84,12 +84,12 @@
     </summary>
     
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://yafengshuanger.cn/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://yafengshuanger.cn/tags/Java/"/>
     
-      <category term="面试知识点" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+      <category term="面试知识点" scheme="http://yafengshuanger.cn/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
