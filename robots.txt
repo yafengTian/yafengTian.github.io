@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://www.yafengshuanger.cn/sitemap.xml
-Sitemap: https://www.yafengshuanger.cn/baidusitemap.xml
+Sitemap: http://www.yafengshuanger.cn/sitemap.xml
+Sitemap: http://www.yafengshuanger.cn/baidusitemap.xml
