@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo个人博客,NexT美化优化,Leaf,Github Pages,博客相册" />
+  <meta name="keywords" content="Java,Spring," />
 
 
 
@@ -101,14 +101,15 @@
 
 
 
-<meta name="description" content="扶摇直上九千里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;tags&#x2F;index.html">
+<meta name="description" content="组件扫描（component scanning）：Spring会自动发现应用上下文中所创建的bean。自动装配（auto wiring）：Spring自动满足bean之间的依赖。**组件扫描和自动装配组合在一起就可以发挥强大的威力，它们能将你的显示配置降到最低。以光盘和播放器为例，具体看以下代码：**">
+<meta name="keywords" content="Java,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring中三种装配bean的方式：自动、Java代码及XML装配">
+<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;Spring%E4%B8%AD%E4%B8%89%E7%A7%8D%E8%A3%85%E9%85%8Dbean%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A%E8%87%AA%E5%8A%A8%E3%80%81Java%E4%BB%A3%E7%A0%81%E5%8F%8AXML%E8%A3%85%E9%85%8D&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="扶摇直上九千里">
+<meta property="og:description" content="组件扫描（component scanning）：Spring会自动发现应用上下文中所创建的bean。自动装配（auto wiring）：Spring自动满足bean之间的依赖。**组件扫描和自动装配组合在一起就可以发挥强大的威力，它们能将你的显示配置降到最低。以光盘和播放器为例，具体看以下代码：**">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-17T06:59:16.392Z">
+<meta property="og:updated_time" content="2019-10-30T02:53:28.021Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -139,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://yafengshuanger.cn/tags/"/>
+  <link rel="canonical" href="http://yafengshuanger.cn/Spring中三种装配bean的方式：自动、Java代码及XML装配/"/>
 
 
 
@@ -157,7 +158,7 @@
     })();
 </script>
 
-  <title>tags | 码农峰酱个人博客</title>
+  <title>Spring中三种装配bean的方式：自动、Java代码及XML装配 | 码农峰酱个人博客</title>
 
   
       <!-- 球型气泡标签云 -->
@@ -315,252 +316,352 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/Spring%E4%B8%AD%E4%B8%89%E7%A7%8D%E8%A3%85%E9%85%8Dbean%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A%E8%87%AA%E5%8A%A8%E3%80%81Java%E4%BB%A3%E7%A0%81%E5%8F%8AXML%E8%A3%85%E9%85%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="亚峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码农峰酱个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">tags</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
+          <h2 class="post-title" itemprop="name headline">Spring中三种装配bean的方式：自动、Java代码及XML装配</h2>
+        
 
-            <div class="tag-cloud-title">
-                目前共计 5 个标签
-            </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-            <div class="tag-cloud-tags">
-              <a href="/tags/C/" style="font-size: 12.5px; color: #6f6f6f">C++</a> <a href="/tags/Java/" style="font-size: 15px; color: #111">Java</a> <a href="/tags/PAT%E4%B9%99%E7%BA%A7/" style="font-size: 12.5px; color: #6f6f6f">PAT乙级</a> <a href="/tags/Spring/" style="font-size: 10px; color: #ccc">Spring</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 12.5px; color: #6f6f6f">面试知识点</a>
-            </div>
+             
+
+             
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T10:41:59+08:00">
+                2019-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Spring%E4%B8%AD%E4%B8%89%E7%A7%8D%E8%A3%85%E9%85%8Dbean%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A%E8%87%AA%E5%8A%A8%E3%80%81Java%E4%BB%A3%E7%A0%81%E5%8F%8AXML%E8%A3%85%E9%85%8D/" class="leancloud_visitors" data-flag-title="Spring中三种装配bean的方式：自动、Java代码及XML装配">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          <!--
+          
+          -->
+
+          
+            <span class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数&#58;</span>
+                
+                <span title="字数">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">时长 &asymp;</span>
+                
+                <span title="时长">
+                  10 分钟
+                </span>
+              
+            </span>
+          
+
+          <!-- 隐藏文章内标题下，内容描述
+          
+              <div class="post-description">
+                  组件扫描（component scanning）：Spring会自动发现应用上下文中所创建的bean。自动装配（auto wiring）：Spring自动满足bean之间的依赖。**组件扫描和自动装配组合在一起就可以发挥强大的威力，它们能将你的显示配置降到最低。以光盘和播放器为例，具体看以下代码：**
+              </div>
+          
+          -->
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>推荐使用装配的顺序：自动装配》Java代码》XML装配</strong></p>
+<h2 id="一，自动装配"><a href="#一，自动装配" class="headerlink" title="一，自动装配"></a>一，自动装配</h2><p><strong>1、Spring从两个角度实现自动化装配：</strong></p>
+<ul>
+<li>组件扫描（component scanning）：Spring会自动发现应用上下文中所创建的bean。</li>
+<li>自动装配（auto wiring）：Spring自动满足bean之间的依赖。<br><strong>组件扫描和自动装配组合在一起就可以发挥强大的威力，它们能将你的显示配置降到最低。以光盘和播放器为例，具体看以下代码：</strong></li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先定义一个CompactDisc 接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CompactDisc</span> </span>&#123;</span><br><span class="line">    <span class="comment">//具体内容不重要</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个CompactDisc实现类</span></span><br><span class="line"><span class="meta">@Component</span>(<span class="string">"popularMusic"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PopularMusic</span> <span class="keyword">implements</span> <span class="title">CompactDisc</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"播放流行乐"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//配置类</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//什么都不用写</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>到目前为止，上述仅仅是一个孤零零的类，什么也没做。那么我们应该如何使用呢？我们有最一般的方法就是new一个对象出来，然后再调用该对象的play()方法即可。但是用new创建对象的方法在实际的业务代码中增加耦合，难以维护，因此才有了Spring。接下来看一下如何用自动装配的方式装配bean（和普通的Java类，Spring中的特殊称谓），继而使用bean的方法。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单元测试</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes = CDPlayerConfig.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CompactDisc cd;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">       cd.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试结果：</span></span><br><span class="line">播放流行乐</span><br></pre></td></tr></table></figure></div>
+<p>看完所有代码会发现，上述代码和平时自己写的代码没啥区别，仅仅只多了几个注解（带@符号的），但就是这几个注解起到了作用。你自己并没手动创建一个CompactDisc 对象，而事实的确存在，而且成功运行，这一切都由Spring容器完成。<br><strong>2、几个常用的注解：</strong><br><strong>@Component：</strong> 注解用来说名该类作为一个组件类，并告知Spring要为该类创建bean<br><strong>@Configuration：</strong> 该注解用来说名该类是一个配置类<br><strong>@ComponentScan：</strong> 启用Spring组件扫描（默认不启用），默认扫描与配置类在同一包带        有@ComPonent注解的类。有两个属性：<br>        （1）<strong>basePackages</strong>：用来设置要进行组件扫描的基础包，值为数组，数组属性为字符串<br>        （2）<strong>basePackageClasses</strong>： 设置的数组中包含了类，这些类所在的包将作为组件扫描的基础包<br><strong>@RunWith(SpringJUnit4ClassRunner.class)</strong>：在测试之前自动生成Spring的应用上下文<br><strong>@ContextConfiguration(classes = CDPlayerConfig.class)</strong>：加载配置类。<br><strong>所以上述代码大致的执行原理如下：</strong><br>     首先Spring容器首先加载配置类，根据配置类中的设置再去扫描指定包中的带有@Component的类；然后Spring容器生成扫描到的所有类的对象（默认是单例的），然后根据需要（哪里有@Autowired）自动装配所需要的bean，至于bean的生命周期则由Spring管理。</p>
+<h2 id="二、Java代码装配"><a href="#二、Java代码装配" class="headerlink" title="二、Java代码装配"></a>二、Java代码装配</h2><p>要用Java代码来装配bean，那么配置类肯定也是少不了的，一个很简单的配置类定义如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfig</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>这里和上面的配置类不同的地方是这里删除了@ComponentScan注解，因为该注解使用进行设置组件扫描的，而在这里的bean注入是通过Java代码配置的，因此不需要。如果删除之后，再去运行上述的CDPlayerTest的话会报BeanCreationException异常。因为测试期间需要注入的CompactDisc 还未被创建。接下来看一个完整的配置类：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 声明一个简单的bean</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ClassicalMusic <span class="title">classicalMusic</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ClassicalMusic();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 声明一个带有依赖对象的bean</span></span><br><span class="line"><span class="comment">    * 在这里通过使用构造器的方式来注入，当spring调用该方法时，它会自动装配一个CompactDisc导配置方法中</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CDPlayer <span class="title">cdPlayer</span><span class="params">(CompactDisc compactDisc)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CDPlayer(compactDisc);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>@Bean注解告诉Spring这个方法将会返回一个对象，该对象将会注册为Spring应用上下文中的bean。默认情况下bean的ID和方法名一致。<br>上述代码中生命了两个bean，即classicalMusic和cdPlayer，前者是一个简单的bean，而后者是一个带有依赖对象的bean，当spring调用该方法时，它会自动装配一个CompactDisc导配置方法中。<br><strong>在这里需要以下三个需要注意的地方：</strong></p>
+<ul>
+<li>在声明带有依赖对象的bean时，必须首先声明被依赖的bean，即这里的classicalMusic（ClassicalMusic 实现了CompactDisc ）。</li>
+<li>这里生成的bean是单例的，若你再声明一个实现了CompactDisc 接口的bean时，则会报错。</li>
+<li>带有@Bean注解的方法可以采用任何必要的Java功能来产生bean实例（构造器和Setter方法是@Bean方法的简单样例）。</li>
+</ul>
+<p>既然上述代码已经配置好了，接下来接看一下如何使用已经配置好的bean，代码如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        AnnotationConfigApplicationContext configApplicationContext = <span class="keyword">new</span> AnnotationConfigApplicationContext(JavaConfig.class);</span><br><span class="line">        CompactDisc compactDisc = (ClassicalMusic)configApplicationContext.getBean(<span class="string">"classicalMusic"</span>);</span><br><span class="line">        compactDisc.play();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//结果</span></span><br><span class="line">播放古典音乐</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>上述代码大致的执行原理如下：</strong></p>
+<p>通过创建AnnotationConfigApplicationContext 对象来配置后的Spring上下文，然后利用上下文来获取对应的bean，继而使用对应的方法。</p>
+<h2 id="三、XML装配"><a href="#三、XML装配" class="headerlink" title="三、XML装配"></a>三、XML装配</h2><p><strong>1、借助构造器注入初始化bean</strong><br>两种基本的配置方式：</p>
+<ul>
+<li>constructor-arg 元素</li>
+<li>使用Spring3.0中引入的c-命名空间</li>
+</ul>
+<p><strong>两者的区别在很大程度上就是是否繁琐以及c-命名空间不能注入集合。</strong><br>下面来看一下一课程-老师的例子做个简单说明：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//课程类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line">    String courseName;</span><br><span class="line">    <span class="keyword">double</span> mark;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Course</span><span class="params">(String courseName, <span class="keyword">double</span> mark)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.courseName = courseName;</span><br><span class="line">        <span class="keyword">this</span>.mark = mark;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//老师类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Course course;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">(Course course)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.course = course;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">teach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我教的课程："</span>+course.courseName+<span class="string">" 绩点为："</span>+course.mark);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置文件</span></span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line">    &lt;!--Course bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"course"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Course"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"数学"</span> /&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"4.0"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--Teacher bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"teacher"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Teacher"</span>&gt;</span><br><span class="line">        &lt;constructor-arg ref=<span class="string">"course"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ClassPathXmlApplicationContext context =<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"com\\tyf\\day4\\ config.xml"</span>);</span><br><span class="line">        Teacher teacher = (Teacher) context.getBean(<span class="string">"teacher"</span>);</span><br><span class="line">        teacher.teach();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//测试结果</span></span><br><span class="line">我教的课程：数学 绩点为：<span class="number">4.0</span></span><br></pre></td></tr></table></figure></div>
+
+<p>上述代码仅仅说明了一个使用<constructor-arg>元素进行构造器注入初始化bean的一个很简单的方法，接下来再看一下如何使用c-命名空间来初始化bean（仅展示xml配置文件）。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns:c=<span class="string">"http://www.springframework.org/schema/c"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line">    &lt;!--Course bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"course"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Course"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"数学"</span> /&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"4.0"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--Teacher bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"teacher"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Teacher"</span> c:_0-ref = <span class="string">"course"</span>/&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出使用c:-命名空间使得xml配置很简洁，易于读懂。_0说的是构造器中第一个参数，同理_1说的是构造器中第二个参数，一次类推。<br>那么如果构造器参数列表中有集合类型，则不能使用c:-命名空间，只能使用<constructor-arg>元素。假如课程中有一个选课学生名字并且使用构造器来注入该属性：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//课程类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Course</span> </span>&#123;</span><br><span class="line">    String courseName;</span><br><span class="line">    <span class="keyword">double</span> mark;</span><br><span class="line">    List&lt;String&gt; students;<span class="comment">//选课学生姓名</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Course</span><span class="params">(String courseName, <span class="keyword">double</span> mark,List&lt;String&gt; studenets)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.courseName = courseName;</span><br><span class="line">        <span class="keyword">this</span>.mark = mark;</span><br><span class="line">        <span class="keyword">this</span>.students = studenets;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//教师类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Course course;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">(Course course)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.course = course;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">teach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我教的课程："</span>+course.courseName+<span class="string">" 绩点为："</span>+course.mark);</span><br><span class="line">        System.out.println(<span class="string">"选课学生："</span>);</span><br><span class="line">        <span class="keyword">for</span>(String name:course.students)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试类不变</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//xml配置文件</span></span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> xmlns:c=<span class="string">"http://www.springframework.org/schema/c"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line">    &lt;!--Course bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"course"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Course"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"数学"</span> /&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"4.0"</span> /&gt;</span><br><span class="line">        &lt;constructor-arg&gt;</span><br><span class="line">            &lt;list&gt;</span><br><span class="line">                &lt;value&gt;Yafeng&lt;/value&gt;</span><br><span class="line">                &lt;value&gt;Xiaoshuang&lt;/value&gt;</span><br><span class="line">            &lt;/list&gt;</span><br><span class="line">        &lt;/constructor-arg&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--Teacher bean--&gt;</span><br><span class="line">    &lt;bean id = <span class="string">"teacher"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Teacher"</span> c:_0-ref = <span class="string">"course"</span>/&gt;</span><br><span class="line">&lt;/beans&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//结果</span></span><br><span class="line">我教的课程：数学 绩点为：<span class="number">4.0</span></span><br><span class="line">选课学生：</span><br><span class="line">Yafeng</span><br><span class="line">Xiaoshuang</span><br></pre></td></tr></table></figure></div>
+
+<p>从上述代码可以看出，list 是作为Constructor的一个子元素来进行工作的，list中又有value子元素用来给List中的属性赋值。</p>
+<p><strong>2、通过Setter方法注入属性</strong></p>
+<p>将Teacher类改为如下（其他不变）：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//老师类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> <span class="keyword">implements</span> <span class="title">People</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Course course;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCourse</span><span class="params">(Course course)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.course = course;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">teach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我教的课程："</span>+course.courseName+<span class="string">" 绩点为："</span>+course.mark);</span><br><span class="line">        System.out.println(<span class="string">"选课学生："</span>);</span><br><span class="line">        <span class="keyword">for</span>(String name:course.students)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//XML文件中改变的部分</span></span><br><span class="line">&lt;!--Teacher bean--&gt;</span><br><span class="line">&lt;bean id = <span class="string">"teacher"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.tyf.day4.Teacher"</span>&gt;</span><br><span class="line">    &lt;property name=<span class="string">"course"</span> ref=<span class="string">"course"</span> /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里注入属性的时候用的是property,其它基本和constructor基本一样。而构造器注入有c-命名空间，而Sertter属性注入方法也有一个p-命名空间，用法和c-命名空间一致。</p>
+
+
+        
+
+      
+    </div>
+
+      <!-- 相关文章推荐 -->
+     
+          
+
+
+     
+
+    
+    
+    
+
+    <div>
+          
+            
+
+          
+    </div>
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div class="read-over">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+      <div>
+        <div class="share_reward">
+  <div>坚持原创技术分享，感谢您的支持和鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="亚峰 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="亚峰 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"> <i class="fa fa-tag"></i> Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E5%88%9D%E8%AF%86Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" rel="next" title="初识Spring依赖注入">
+                <i class="fa fa-chevron-left"></i> 初识Spring依赖注入
+              </a>
+            
           </div>
 
-          
-               
-               <style>
-  .wrapper {
-    margin: 0 auto;
-    padding:0;
-    width: 700px;
-    min-width: 100px;
-  }
-  .tagbubble {
-    position: relative;
-    margin-top: 260px;
-  }
-  .tagbubble a {
-    display: block;
-    border-radius: 50%;
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
-    text-decoration: none;
-    text-align: center;
-  }
+          <span class="post-nav-divider"></span>
 
-  .b0{
-      width: 95px;
-      height: 95px;
-      line-height: 95px;
-  }
-  .b1{
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-  }
-  .b2{
-      width: 60px;
-      height: 60px;
-      line-height: 60px;
-  }
-  .b3{
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-  }
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-  .c0{
-      background: -moz-linear-gradient(top, #d1e5fd 0%, #3d86f4 100%);
-      background: -webkit-linear-gradient(top, #d1e5fd 0%,#3d86f4 100%);
-      background: -o-linear-gradient(top, #d1e5fd 0%,#3d86f4 100%);
-      background: -ms-linear-gradient(top, #d1e5fd 0%,#3d86f4 100%);
-      background: linear-gradient(to bottom, #d1e5fd 0%,#3d86f4 100%);
-  }
-  .c1{
-      background: -moz-linear-gradient(top, #b9f8ff 0%, #1de7ff 100%);
-      background: -webkit-linear-gradient(top, #b9f8ff 0%,#1de7ff 100%);
-      background: -o-linear-gradient(top, #b9f8ff 0%,#1de7ff 100%);
-      background: -ms-linear-gradient(top, #b9f8ff 0%,#1de7ff 100%);
-      background: linear-gradient(to bottom, #b9f8ff 0%,#1de7ff 100%);
-  }
-  .c2{
-      background: -moz-linear-gradient(top, #fff4e2 0%, #ffd79c 100%);
-      background: -webkit-linear-gradient(top, #fff4e2 0%,#ffd79c 100%);
-      background: -o-linear-gradient(top, #fff4e2 0%,#ffd79c 100%);
-      background: -ms-linear-gradient(top, #fff4e2 0%,#ffd79c 100%);
-      background: linear-gradient(to bottom, #fff4e2 0%,#ffd79c 100%);
-  }
-  .c3{
-      background: -moz-linear-gradient(top, #fef4fa 0%, #fbbae0 100%);
-      background: -webkit-linear-gradient(top, #fef4fa 0%,#fbbae0 100%);
-      background: -o-linear-gradient(top, #fef4fa 0%,#fbbae0 100%);
-      background: -ms-linear-gradient(top, #fef4fa 0%,#fbbae0 100%);
-      background: linear-gradient(to bottom, #fef4fa 0%,#fbbae0 100%);
-  }
-  .c4{
-      background: -moz-linear-gradient(top, #fedc90 0%, #ffb515 100%);
-      background: -webkit-linear-gradient(top, #fedc90 0%,#ffb515 100%);
-      background: -o-linear-gradient(top, #fedc90 0%,#ffb515 100%);
-      background: -ms-linear-gradient(top, #fedc90 0%,#ffb515 100%);
-      background: linear-gradient(to bottom, #fedc90 0%,#ffb515 100%);
-  }
-  .c5{
-      background: -moz-linear-gradient(top, #bcf7ca 0%, #1fda4b 100%);
-      background: -webkit-linear-gradient(top, #bcf7ca 0%,#1fda4b 100%);
-      background: -o-linear-gradient(top, #bcf7ca 0%,#1fda4b 100%);
-      background: -ms-linear-gradient(top, #bcf7ca 0%,#1fda4b 100%);
-      background: linear-gradient(to bottom, #bcf7ca 0%,#1fda4b 100%);
-  }
-  .c6{
-      background: -moz-linear-gradient(top, #f7cdf8 0%, #db43e7 100%);
-      background: -webkit-linear-gradient(top, #f7cdf8 0%,#db43e7 100%);
-      background: -o-linear-gradient(top, #f7cdf8 0%,#db43e7 100%);
-      background: -ms-linear-gradient(top, #f7cdf8 0%,#db43e7 100%);
-      background: linear-gradient(to bottom, #f7cdf8 0%,#db43e7 100%);
-  }
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
-  /* 移动端样式 */
-  @media (max-width: 767px){
-    .wrapper {
-        width: 10px;
-        margin-left:20px;
-        min-width: 0px;
-    }
-    .tagbubble{
-        width: 300px;
-        min-width: 0px;
-        margin-top: 175px;
-        margin-left: 10px;
-    }
-    .tagbubble a {
-      font-size: 13px;
-    }
-    .b0{
-        width: 65px;
-        height: 65px;
-        line-height: 60px;
-    }
-    .b1{
-        width: 50px;
-        height: 50px;
-        line-height: 45px;
-    }
-    .b2{
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-    }
-    .b3{
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-    }
-  }
 
-</style>
 
-<div class="wrapper">
-    <div class="tagbubble">
+    <div class="post-spread">
+      
+         <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
 
-    </div>
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
 </div>
-<script type="text/javascript">
 
-     var alltags = document.getElementsByClassName('tag-cloud-tags');
 
-     //隐藏tag-cloud-tags这个div
-     alltags[0].setAttribute("hidden", "hidden");
-
-     var tags = alltags[0].getElementsByTagName('a');
-
-     var bo = new Array();
-     var co = new Array();
-     for(var i=0;i<4;i++){
-        bo.push("b" + i);
-     }
-     for(var i=0;i<7;i++){
-        co.push("c" + i);
-     }
-
-     var divDom = document.querySelector('.tagbubble')
-     //var divDom = document.getElementsByClassName('tagbubble')[0];
-     for(var i=0;i<tags.length;i++){
-        var atag = document.createElement('a');
-        var boStyle = bo[Math.floor(Math.random()*4)];
-        var coStyle = co[Math.floor(Math.random()*7)];
-        if(tags[i].innerText.length > 10){
-            boStyle = "b0";
-        }else if(tags[i].innerText.length > 5 && tags[i].innerText.length < 10){
-            boStyle = "b1";
-        }
-        atag.setAttribute("class", boStyle+" "+coStyle);
-        atag.setAttribute("href", tags[i].href);
-        atag.innerText = tags[i].innerText;
-        divDom.appendChild(atag);
-    }
-
-    function browserRedirect() {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-        var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            //移动端页面
-            return 80;
-        } else {
-            //pc端页面
-            return 140;
-        }
-    }
-
-    var tagRadius = browserRedirect();
-
-    /*3D标签云*/
-    tagcloud({
-        selector: ".tagbubble",   //元素选择器
-        fontsize: 14,             //基本字体大小, 单位px
-        radius: tagRadius,        //滚动半径, 单位px 页面宽度和高度的五分之一
-        mspeed: "slow",           //滚动最大速度, 取值: slow, normal(默认), fast
-        ispeed: "slow",           //滚动初速度, 取值: slow, normal(默认), fast
-        direction: 135,           //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
-        keep: true               //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
-    });
-</script>
-
-          
-
-        
-      </div>
-      
-      
       
     </div>
-    
-    
-    
   </div>
 
 
@@ -602,8 +703,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1073,6 +1183,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，自动装配"><span class="nav-number">1.</span> <span class="nav-text">一，自动装配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java代码装配"><span class="nav-number">2.</span> <span class="nav-text">二、Java代码装配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、XML装配"><span class="nav-number">3.</span> <span class="nav-text">三、XML装配</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1660,38 +1786,35 @@ show_date_time();
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1716,9 +1839,9 @@ show_date_time();
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+            if (localhost.test(document.URL)) return;
+            addCount(Counter);
           
         });
     });
