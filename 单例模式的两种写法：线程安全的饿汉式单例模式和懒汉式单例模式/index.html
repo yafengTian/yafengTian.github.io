@@ -101,15 +101,15 @@
 
 
 
-<meta name="description" content="一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。">
+<meta name="description" content="一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。一般的做法是哪里需要操作数据库的方法哪里就会创建一个对象，然后再引用对象里面的操作方法，这样做的不好的地方就是创建的对象比较多，比较消耗内存，降低程序效率，而我们完全可以只创建一个对象，然后哪里需要哪里就直接用，无需重新创建，这就是单例模式。">
 <meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式的两种写法：线程安全的饿汉式单例模式和懒汉式单例模式">
 <meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%9A%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E9%A5%BF%E6%B1%89%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%87%92%E6%B1%89%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。">
+<meta property="og:description" content="一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。一般的做法是哪里需要操作数据库的方法哪里就会创建一个对象，然后再引用对象里面的操作方法，这样做的不好的地方就是创建的对象比较多，比较消耗内存，降低程序效率，而我们完全可以只创建一个对象，然后哪里需要哪里就直接用，无需重新创建，这就是单例模式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-02T12:53:29.310Z">
+<meta property="og:updated_time" content="2019-11-02T12:58:05.312Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -459,7 +459,7 @@
           <!-- 隐藏文章内标题下，内容描述
           
               <div class="post-description">
-                  一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。
+                  一般我们在项目开发中有时候常会遇到数据库的连接（不使用框架），我们常会在dao类中写一些通用的方法以供后面使用。一般的做法是哪里需要操作数据库的方法哪里就会创建一个对象，然后再引用对象里面的操作方法，这样做的不好的地方就是创建的对象比较多，比较消耗内存，降低程序效率，而我们完全可以只创建一个对象，然后哪里需要哪里就直接用，无需重新创建，这就是单例模式。
               </div>
           
           -->
