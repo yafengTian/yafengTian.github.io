@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo个人博客,NexT美化优化,Leaf,Github Pages,博客相册" />
+  <meta name="keywords" content="Java,Spring," />
 
 
 
@@ -101,14 +101,15 @@
 
 
 
-<meta name="description" content="扶摇直上九千里">
+<meta name="description" content="DI即Dependencyinjection（依赖注入**），IOC即Inversion of Control（控制反转）。这里的DI和IOC其实是一个意思，即对同一个问题不同角度的回答，侧重点有所不同。DI侧重的是“注入”，而IOC的侧重点则是“反转”,两者没有本质区别，都是为了降低代码耦合度，增加项目可维护性。">
+<meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Spring依赖注入">
 <meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E5%88%9D%E8%AF%86Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="扶摇直上九千里">
+<meta property="og:description" content="DI即Dependencyinjection（依赖注入**），IOC即Inversion of Control（控制反转）。这里的DI和IOC其实是一个意思，即对同一个问题不同角度的回答，侧重点有所不同。DI侧重的是“注入”，而IOC的侧重点则是“反转”,两者没有本质区别，都是为了降低代码耦合度，增加项目可维护性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-26T14:44:12.357Z">
+<meta property="og:updated_time" content="2019-11-02T13:05:53.169Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -370,6 +371,37 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -402,7 +434,7 @@
                   <span class="post-meta-item-text">字数&#58;</span>
                 
                 <span title="字数">
-                  0
+                  1k
                 </span>
               
 
@@ -418,13 +450,17 @@
                   <span class="post-meta-item-text">时长 &asymp;</span>
                 
                 <span title="时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </span>
           
 
           <!-- 隐藏文章内标题下，内容描述
+          
+              <div class="post-description">
+                  DI即Dependencyinjection（依赖注入**），IOC即Inversion of Control（控制反转）。这里的DI和IOC其实是一个意思，即对同一个问题不同角度的回答，侧重点有所不同。DI侧重的是“注入”，而IOC的侧重点则是“反转”,两者没有本质区别，都是为了降低代码耦合度，增加项目可维护性。
+              </div>
           
           -->
 
@@ -441,7 +477,23 @@
       
 
       
-        
+        <h2 id="一、Spring之DI（IOC）"><a href="#一、Spring之DI（IOC）" class="headerlink" title="一、Spring之DI（IOC）"></a>一、Spring之DI（IOC）</h2><p>DI即Dependencyinjection（依赖注入**），IOC即Inversion of Control（控制反转）。这里的DI和IOC其实是一个意思，即对同一个问题不同角度的回答，侧重点有所不同。DI侧重的是“注入”，而IOC的侧重点则是“反转”,两者没有本质区别，都是为了降低代码耦合度，增加项目可维护性。</p>
+<h2 id="1、DI"><a href="#1、DI" class="headerlink" title="1、DI"></a>1、DI</h2><p>依赖注入侧重的是注入，即程序在在运行之前都不知道其依赖的对象具体是什么，当程序运行时需要什么则Spring容器会给你注入什么（Java反射机制）。它仅仅告诉你多模块之间是如何依赖的，但不会告诉你它们如何做，对象无需自行创建或管理它们的依赖关系。依赖注入会将以来的关系自动交给目标对象，而不用对象自己去获取。</p>
+<h2 id="2、IOC"><a href="#2、IOC" class="headerlink" title="2、IOC"></a>2、IOC</h2><p>IOC则注重的是反转，这里反转的是依赖对象的创建。对于普通的两个模块之间，依赖对象的创建由被依赖对象创建完成；而有了IOC之后，依赖对象的创建由Spring容器完成，无需再用被依赖对象创建，即被依赖对象的创建权反转。</p>
+<h2 id="3、DI-IOC-的作用"><a href="#3、DI-IOC-的作用" class="headerlink" title="3、DI(IOC)的作用"></a>3、DI(IOC)的作用</h2><p>降低耦合度，增加代码的可维护性，可复用性，同时有利于单元测试，但是要想完全不耦合也是不可能，要想实现一定的功能，耦合又是必然的。看下面的例子： 假如现在有一些订单数据要插入SQLServer中，你可以按下面方式写</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作数据库（模拟）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SqlServer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"向SQL Server中插入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用对应类中的方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SqlServer sqlServer = <span class="keyword">new</span> SqlServer();</span><br><span class="line">        sqlServer.insert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>按上述代码写完全没毛病，但是当数据库换成Oracle了之后呢？那么你是不是同时既要改SqlServer和Order中的代码，如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作数据库（模拟）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Oracle</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"向Oracle 中插入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用对应类中的方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Oracle oracle = <span class="keyword">new</span> Oracle ();</span><br><span class="line">        oracle .insert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>当你改完之后数据库又换成db了，那你还要继续这样改嘛？虽然说上面代码很容易改，但是真正到实际项目中时就不会这么简单了，光改代码就得累死人。 那么最理想的代码应该怎么写？如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据库操作通用接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DataBase</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String database)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SqlServer</span> <span class="keyword">implements</span> <span class="title">DataBase</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String database)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"向"</span>+database+<span class="string">"中插入数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//构造器注入</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">   DataBase dataBase;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Order</span><span class="params">(DataBase dataBase)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.dataBase = dataBase;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">orderInsert</span><span class="params">(String dataBaseName)</span></span>&#123;</span><br><span class="line">       dataBase.insert(dataBaseName);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String dataBaseName = <span class="string">"SqlServer"</span>;</span><br><span class="line">    DataBase dataBase = <span class="keyword">new</span> SqlServer();</span><br><span class="line">    Order order = <span class="keyword">new</span> Order(dataBase);</span><br><span class="line">    order.orderInsert(dataBaseName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>这时候无论你是换成什么数据库，我只需添加对相应数据库的操作类即可，Order订单类已经无需再更改，从而降低模块之间的耦合度，提高模块的可复用性。这也比较符合设计模式当中的“开闭原则”，即对拓展开放，对更改关闭。在上述的例子当中展示的是几种注入方式当中的构造器注入。下面再来看一下另一种注入方式：属性注入（Order类如下，其他不变）</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Order</span> </span>&#123;</span><br><span class="line">   DataBase dataBase;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDataBase</span><span class="params">(DataBase dataBase)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.dataBase = dataBase;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">orderInsert</span><span class="params">(String dataBaseName)</span></span>&#123;</span><br><span class="line">       dataBase.insert(dataBaseName);</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       String dataBaseName = <span class="string">"SqlServer"</span>;</span><br><span class="line">        DataBase dataBase = <span class="keyword">new</span> SqlServer();</span><br><span class="line">        Order order = <span class="keyword">new</span> Order();</span><br><span class="line">        order.setDataBase(dataBase);</span><br><span class="line">        order.orderInsert(dataBaseName);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>上述就是依赖注入的另一种方式即属性注入。需要注意的是前面所说的注入的依赖是我自己手动来创建的，而在Spring中对象的创建，管理等均由Spring容器来完成，无需我们手动创建。</p>
+
 
         
 
@@ -513,6 +565,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"> <i class="fa fa-tag"></i> Spring</a>
+          
+        </div>
       
 
       
@@ -612,8 +672,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1084,6 +1153,22 @@ show_date_time();
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Spring之DI（IOC）"><span class="nav-number">1.</span> <span class="nav-text">一、Spring之DI（IOC）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、DI"><span class="nav-number">2.</span> <span class="nav-text">1、DI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、IOC"><span class="nav-number">3.</span> <span class="nav-text">2、IOC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、DI-IOC-的作用"><span class="nav-number">4.</span> <span class="nav-text">3、DI(IOC)的作用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1098,7 +1183,7 @@ show_date_time();
       <h3 class="widget-title">Tag Cloud</h3>
       <div id="myCanvasContainer" class="widget tagcloud">
           <canvas width="250" height="250" id="resCanvas" style="width=100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT%E4%B9%99%E7%BA%A7/" rel="tag">PAT乙级</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">面试知识点</a><span class="tag-list-count">2</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT%E4%B9%99%E7%BA%A7/" rel="tag">PAT乙级</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">面试知识点</a><span class="tag-list-count">2</span></li></ul>
           </canvas>
       </div>
       </div>
@@ -1146,7 +1231,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共6k字 &nbsp;|&nbsp; Since 2019/8/7 七夕</span>
+  <span class="post-count">全站共7k字 &nbsp;|&nbsp; Since 2019/8/7 七夕</span>
 </div>
 
         
