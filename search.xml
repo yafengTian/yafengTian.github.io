@@ -4,7 +4,7 @@
     <title>软件设计模式之原型模式及浅复制和深复制</title>
     <url>/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/</url>
     <content><![CDATA[<p><strong>欢迎各位大哥大姐访问个人博客<a href="http://www.yafengshuanger.cn/" target="_blank" rel="noopener">码农峰酱</a></strong></p>
-<h1 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h1><ul>
+<h2 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h2><ul>
 <li>对同一个对象或者类似对象需要多次进行实例化时；</li>
 <li>对于实例化不方便而复制比较方便时。</li>
 </ul>
