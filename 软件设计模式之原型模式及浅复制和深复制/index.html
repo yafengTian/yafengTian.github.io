@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo个人博客,NexT美化优化,Leaf,Github Pages,博客相册" />
+  <meta name="keywords" content="Java,设计模式," />
 
 
 
@@ -101,14 +101,18 @@
 
 
 
-<meta name="description" content="扶摇直上九千里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农峰酱个人博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;tags&#x2F;C&#x2F;index.html">
+<meta name="description" content="用一个已经创建的实例作为原型，通过复制该原型来创建一个和原型相同或者相似的新对象。在这里，原型对象指定了要创建的对象的种类，用这种方法创建对象非常有效，根本不需要知道创建对象的具体的细节。">
+<meta name="keywords" content="Java,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件设计模式之原型模式及浅复制和深复制">
+<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="扶摇直上九千里">
+<meta property="og:description" content="用一个已经创建的实例作为原型，通过复制该原型来创建一个和原型相同或者相似的新对象。在这里，原型对象指定了要创建的对象的种类，用这种方法创建对象非常有效，根本不需要知道创建对象的具体的细节。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191104122925953.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-04T05:17:40.678Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191104122925953.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -138,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://yafengshuanger.cn/tags/C/"/>
+  <link rel="canonical" href="http://yafengshuanger.cn/软件设计模式之原型模式及浅复制和深复制/"/>
 
 
 
@@ -156,7 +160,7 @@
     })();
 </script>
 
-  <title>标签: C++ | 码农峰酱个人博客</title>
+  <title>软件设计模式之原型模式及浅复制和深复制 | 码农峰酱个人博客</title>
 
   
       <!-- 球型气泡标签云 -->
@@ -183,7 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <!--fork me from github-->
@@ -312,82 +316,334 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>C++<small>标签</small>
-        </h2>
-      </div>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="亚峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码农峰酱个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">软件设计模式之原型模式及浅复制和深复制</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+             
+
+             
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-04T13:16:00+08:00">
+                2019-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/" class="leancloud_visitors" data-flag-title="软件设计模式之原型模式及浅复制和深复制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          <!--
+          
+          -->
+
+          
+            <span class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数&#58;</span>
+                
+                <span title="字数">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">时长 &asymp;</span>
+                
+                <span title="时长">
+                  5 分钟
+                </span>
+              
+            </span>
+          
+
+          <!-- 隐藏文章内标题下，内容描述
+          
+              <div class="post-description">
+                  用一个已经创建的实例作为原型，通过复制该原型来创建一个和原型相同或者相似的新对象。在这里，原型对象指定了要创建的对象的种类，用这种方法创建对象非常有效，根本不需要知道创建对象的具体的细节。
+              </div>
+          
+          -->
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="my-post-header">
-
-      <div class="my-post-meta">
-        <time class="my-post-time" itemprop="dateCreated"
-              datetime="2019-10-23T22:22:56+08:00"
-              content="2019-10-23" >
-          10-23
-        </time>
-      </div>
-
-      <h3 class="my-post-title">
-        
-            <a class="my-post-title-link" href="/PAT%E4%B9%99%E7%BA%A71044%EF%BC%9A%E7%81%AB%E6%98%9F%E6%95%B0%E5%AD%97/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级1044：火星数字</span>
-              
-            </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
+      
 
       
+        <p><strong>欢迎各位大哥大姐访问个人博客<a href="http://www.yafengshuanger.cn/" target="_blank" rel="noopener">码农峰酱</a></strong></p>
+<h1 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h1><ul>
+<li>对同一个对象或者类似对象需要多次进行实例化时；</li>
+<li>对于实例化不方便而复制比较方便时。</li>
+</ul>
+<h2 id="二、原型模型定义"><a href="#二、原型模型定义" class="headerlink" title="二、原型模型定义"></a>二、原型模型定义</h2><p>用一个已经创建的实例作为原型，通过复制该原型来创建一个和原型相同或者相似的新对象。在这里，原型对象指定了要创建的对象的种类，用这种方法创建对象非常有效，根本不需要知道创建对象的具体的细节。</p>
+<h2 id="三、原型模式中几个重要的角色："><a href="#三、原型模式中几个重要的角色：" class="headerlink" title="三、原型模式中几个重要的角色："></a>三、原型模式中几个重要的角色：</h2><p>（1）抽象原型类：规定了原型对象必须实现的接口；<br>（2）具体原型类：实现了抽象原型类的的clone()方法，是可以被复制的；<br>（3）访问类：使用具体类中的clone()方法来复制对象。</p>
+<h2 id="四、原型模式类图："><a href="#四、原型模式类图：" class="headerlink" title="四、原型模式类图："></a>四、原型模式类图：</h2><p><img src="https://img-blog.csdnimg.cn/20191104122925953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="五、应用举例"><a href="#五、应用举例" class="headerlink" title="五、应用举例"></a>五、应用举例</h2><p>应聘者对于不同的公司写不同的简历，但个人信息都相同，因此只需修改除个人信息之外的信息<br>常规做法是写一个简历类，根据不同的公司实现不同的简历对象，而原型模型：使用clone()方法，克隆多个不同的实例对象。使用原型模型，避免手动创建对象，不需要执行构造方法，减少工作量，提高性能。<br><strong>1、浅复制</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Resume</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;<span class="comment">/*实现Cloneable接口*/</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String company;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Experiment&gt; experimentList;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Experiment&gt; <span class="title">getExperimentList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> experimentList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addExperimentList</span><span class="params">(Experiment experiment)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.experimentList .add(experiment);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Resume</span><span class="params">(String name, String sex, <span class="keyword">int</span> age, String company,List&lt;Experiment&gt; experimentList)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.sex = sex;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.company = company;</span><br><span class="line">        <span class="keyword">this</span>.experimentList  =experimentList;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompany</span><span class="params">(String company)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.company = company;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Information</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"个人信息："</span>);</span><br><span class="line">        System.out.println(<span class="string">"Name："</span>+<span class="keyword">this</span>.name+<span class="string">"  Age:"</span>+<span class="keyword">this</span>.age+<span class="string">"  Sex:"</span>+<span class="keyword">this</span>.age);</span><br><span class="line">        System.out.println(<span class="string">"目标公司："</span>+<span class="keyword">this</span>.company);</span><br><span class="line">        System.out.println(<span class="string">"工作经历："</span>);</span><br><span class="line">        <span class="keyword">for</span> (Experiment experiment:experimentList) &#123;</span><br><span class="line">            System.out.println(<span class="string">"company:"</span> + experiment.getCompanyName()+</span><br><span class="line">                    <span class="string">" time:"</span>+experiment.getTime()+<span class="string">"sallary:"</span>+experiment.getSallary());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *实现Cloneable接口的clone（）方法</span></span><br><span class="line"><span class="comment">    * 浅复制</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  (Resume)<span class="keyword">super</span>.clone();<span class="comment">//调用父类clone()方法</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">        List&lt;Experiment&gt; experimentList = <span class="keyword">new</span> ArrayList&lt;Experiment&gt;();</span><br><span class="line">        Experiment experiment1 = <span class="keyword">new</span> Experiment(<span class="string">"Tecent"</span>,<span class="string">"2019.06-2022-7"</span>,<span class="number">20000</span>);</span><br><span class="line">        experimentList.add(experiment1);</span><br><span class="line">        Resume resume = <span class="keyword">new</span> Resume(<span class="string">"yafeng"</span>,<span class="string">"man"</span>,<span class="number">23</span>,<span class="string">"HuaWei"</span>,experimentList);</span><br><span class="line">        resume.Information();</span><br><span class="line">        Resume resume1 = (Resume)resume.clone();</span><br><span class="line">        resume1.setCompany(<span class="string">"Alibaba"</span>);</span><br><span class="line">        resume1.Information(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>上述代码的意思是当你第一次投递简历时你写了一份简历，所投公司为华为；第二次再投阿里巴巴时，仅需修改目标公司的名称，其个人信息不变，这样做的好处就是省时省力，高效快捷。上述代码输出的结果如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">个人信息：</span><br><span class="line">Name：yafeng  Age:<span class="number">23</span>  Sex:<span class="number">23</span></span><br><span class="line">目标公司：HuaWei</span><br><span class="line">工作经历：</span><br><span class="line">company:Tecnet time:<span class="number">2019.06</span>-<span class="number">2022</span>-<span class="number">7</span>sallary:<span class="number">20000.0</span></span><br><span class="line">个人信息：</span><br><span class="line">Name：yafeng  Age:<span class="number">23</span>  Sex:<span class="number">23</span></span><br><span class="line">目标公司：Alibaba</span><br><span class="line">工作经历：</span><br><span class="line">company:HuaWei time:<span class="number">2019.06</span>-<span class="number">2022</span>-<span class="number">7</span>sallary:<span class="number">20000.0</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>那么到底什么是浅复制呢？在上述代码的基础上再添加如下代码，即向resume对象的experimentList属性中再添加一个数据，代码如下：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"=======================================举例说明浅复制====================================="</span>);</span><br><span class="line"> Experiment experiment2 = <span class="keyword">new</span> Experiment(<span class="string">"Baidu"</span>,<span class="string">"2022.08-2025-7"</span>,<span class="number">30000</span>);</span><br><span class="line"> resume.addExperimentList(experiment2);</span><br><span class="line"> System.out.println(resume == resume1);</span><br><span class="line"> System.out.println(resume.getExperimentList() == resume1.getExperimentList());</span><br></pre></td></tr></table></figure></div>
+
+<p>输出结果如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">=======================================举例说明浅复制=====================================</span><br><span class="line">个人信息：</span><br><span class="line">Name：yafeng  Age:<span class="number">23</span>  Sex:<span class="number">23</span></span><br><span class="line">目标公司：Alibaba</span><br><span class="line">工作经历：</span><br><span class="line">company:Tecent time:<span class="number">2019.06</span>-<span class="number">2022</span>-<span class="number">7</span>sallary:<span class="number">20000.0</span></span><br><span class="line">company:Baidu time:<span class="number">2022.08</span>-<span class="number">2025</span>-<span class="number">7</span>sallary:<span class="number">30000.0</span></span><br><span class="line"><span class="keyword">false</span></span><br><span class="line"><span class="keyword">true</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>resume == resume1为false，即resume 和resume1两个不同的对象，而resume.getExperimentList() == resume1.getExperimentList()为true说明在对象复制时仅仅复制了该对象属性的引用，而从上述输出中也可以看出，在给resume对象的experimentList属性添加一个数据时，resume1的experimentList属性也发生了变化，这就是浅复制。</strong> </p>
+<blockquote>
+<p><strong>浅复制总结成一句话就是：通过clone方法复制时，对象的属性通过复制引用的方式来完成对象复制的一种复制方式。</strong></p>
+</blockquote>
+<p><strong>2、深复制（通过对象流实现）</strong><br>将述代码中Resume和Experience两个类实现的接口换为Serializable，除测试代码其他的代码均不变，测试代码如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException, IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">    Resume resume=<span class="keyword">new</span> Resume(<span class="string">"yafeng"</span>,<span class="string">"男"</span>,<span class="number">21</span>);</span><br><span class="line">    WorkExperimence workExperimence1= <span class="keyword">new</span> WorkExperimence(<span class="string">"Tencent"</span>,<span class="string">"2015.07-2019.06"</span>,<span class="number">20000</span>);</span><br><span class="line">    resume.getWorkExperimenceList().add(workExperimence1);</span><br><span class="line">    <span class="comment">//将对象转换为字节写入流中</span></span><br><span class="line">    ByteArrayOutputStream baos = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">    ObjectOutputStream oops = <span class="keyword">new</span> ObjectOutputStream(baos);</span><br><span class="line">    oops.writeObject(resume);</span><br><span class="line">    <span class="comment">//从流中读出</span></span><br><span class="line">    ByteArrayInputStream bais = <span class="keyword">new</span> ByteArrayInputStream(baos.toByteArray());</span><br><span class="line">    ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(bais);</span><br><span class="line">    Resume resume1 = (Resume) ois.readObject();</span><br><span class="line">    System.out.println(<span class="string">"============================举例说明深复制======================================="</span>);</span><br><span class="line">    System.out.println(resume == resume1);</span><br><span class="line">    System.out.println(resume.getWorkExperimenceList() == resume1.getWorkExperimenceList());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输出结果：</span><br><span class="line">=========================举例说明深复制==================================</span><br><span class="line"><span class="keyword">false</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>上述结果说明，深复制当中，复制后的对象和原对象是两个完全不同的对象，没有任何关联，只是它们的属性值都是相同的，后续对任何一个的修改或其他操作都不会对另外一个有影响！本文是通过对象流的读写来完成深复制的。</strong></p>
+
+
         
-
-  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="my-post-header">
-
-      <div class="my-post-meta">
-        <time class="my-post-time" itemprop="dateCreated"
-              datetime="2019-10-19T21:06:47+08:00"
-              content="2019-10-19" >
-          10-19
-        </time>
-      </div>
-
-      <h3 class="my-post-title">
-        
-            <a class="my-post-title-link" href="/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/" itemprop="url">
-              
-                <span itemprop="name">模拟大数除法</span>
-              
-            </a>
-        
-      </h3>
-
-    </header>
-  </article>
-
 
       
     </div>
 
+      <!-- 相关文章推荐 -->
+     
+          
+
+
+     
+
+    
+    
+    
+
+    <div>
+          
+            
+
+          
+    </div>
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div class="read-over">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+      <div>
+        <div class="share_reward">
+  <div>坚持原创技术分享，感谢您的支持和鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="亚峰 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="亚峰 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"> <i class="fa fa-tag"></i> 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%EF%BC%9A%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E9%A5%BF%E6%B1%89%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%87%92%E6%B1%89%E5%BC%8F%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="next" title="单例模式的两种写法：线程安全的饿汉式单例模式和懒汉式单例模式">
+                <i class="fa fa-chevron-left"></i> 单例模式的两种写法：线程安全的饿汉式单例模式和懒汉式单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+         <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -395,6 +651,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzE0My8yMzY0Mw=="></div>
+    </div>
+
+  
+
+
 
 
 
@@ -419,8 +684,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -891,6 +1165,22 @@ show_date_time();
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、应用场景"><span class="nav-number">1.</span> <span class="nav-text">一、应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二、原型模型定义"><span class="nav-number">1.1.</span> <span class="nav-text">二、原型模型定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、原型模式中几个重要的角色："><span class="nav-number">1.2.</span> <span class="nav-text">三、原型模式中几个重要的角色：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、原型模式类图："><span class="nav-number">1.3.</span> <span class="nav-text">四、原型模式类图：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、应用举例"><span class="nav-number">1.4.</span> <span class="nav-text">五、应用举例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1091,6 +1381,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1119,6 +1413,17 @@ show_date_time();
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1462,38 +1767,35 @@ show_date_time();
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1518,9 +1820,9 @@ show_date_time();
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+            if (localhost.test(document.URL)) return;
+            addCount(Counter);
           
         });
     });
