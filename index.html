@@ -332,6 +332,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="亚峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码农峰酱个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" itemprop="url">Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+             
+
+             
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T11:46:15+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          <!--
+          
+          -->
+
+          
+            <span class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数&#58;</span>
+                
+                <span title="字数">
+                  3.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">时长 &asymp;</span>
+                
+                <span title="时长">
+                  13 分钟
+                </span>
+              
+            </span>
+          
+
+          <!-- 隐藏文章内标题下，内容描述
+          
+          -->
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          在软件开发时，有一个很大的挑战就是将应用程序从一种环境迁移到另一种环境中。在开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移也无法工作。数据库配置，加密算法已经与外部系统的集成时跨环境部署时会发生变化的几个典型例子。在数据库配置方面，在开发环境中我们可能会使用嵌入式数据库，并且能够加载测试数据；在生产环境中，可能更希望使用JNDI从容器中获取一个DataSource；而在QA环境中，我们可能更希望配置为Commons DBCP连接池。而上述的三个方法相同的仅限于都生成类型为DataSource的bean，仅此而已。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+      <!-- 相关文章推荐 -->
+     
+
+    
+    
+    
+
+    <div>
+          
+    </div>
+
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2066,7 +2280,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -2163,6 +2377,10 @@
                   
                   
                     <li class='my-links-of-blogroll-li'>
+                      <a href="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域" target="_blank">Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域</a>
+                    </li>
+                  
+                    <li class='my-links-of-blogroll-li'>
                       <a href="/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/" title="软件设计模式之原型模式及浅复制和深复制" target="_blank">软件设计模式之原型模式及浅复制和深复制</a>
                     </li>
                   
@@ -2176,10 +2394,6 @@
                   
                     <li class='my-links-of-blogroll-li'>
                       <a href="/%E5%88%9D%E8%AF%86Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" title="初识Spring依赖注入" target="_blank">初识Spring依赖注入</a>
-                    </li>
-                  
-                    <li class='my-links-of-blogroll-li'>
-                      <a href="/PAT%E4%B9%99%E7%BA%A71044%EF%BC%9A%E7%81%AB%E6%98%9F%E6%95%B0%E5%AD%97/" title="PAT乙级1044：火星数字" target="_blank">PAT乙级1044：火星数字</a>
                     </li>
                   
                 </ul>
@@ -2530,7 +2744,7 @@ show_date_time();
       <h3 class="widget-title">Tag Cloud</h3>
       <div id="myCanvasContainer" class="widget tagcloud">
           <canvas width="250" height="250" id="resCanvas" style="width=100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT%E4%B9%99%E7%BA%A7/" rel="tag">PAT乙级</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">面试知识点</a><span class="tag-list-count">2</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT%E4%B9%99%E7%BA%A7/" rel="tag">PAT乙级</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">面试知识点</a><span class="tag-list-count">2</span></li></ul>
           </canvas>
       </div>
       </div>
@@ -2578,7 +2792,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共8.3k字 &nbsp;|&nbsp; Since 2019/8/7 七夕</span>
+  <span class="post-count">全站共11.7k字 &nbsp;|&nbsp; Since 2019/8/7 七夕</span>
 </div>
 
         

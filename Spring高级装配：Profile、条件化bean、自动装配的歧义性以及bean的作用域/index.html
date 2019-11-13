@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="C++,PAT乙级," />
+  <meta name="keywords" content="Java,Spring," />
 
 
 
@@ -101,15 +101,15 @@
 
 
 
-<meta name="description" content="如果给你两个1000位的数字，你怎么得到它们除法的结果？如果你要用普通的出发运算的肯定是行不通的~所以这算是一种比较理想的计算方法。">
-<meta name="keywords" content="C++,PAT乙级">
+<meta name="description" content="在软件开发时，有一个很大的挑战就是将应用程序从一种环境迁移到另一种环境中。在开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移也无法工作。数据库配置，加密算法已经与外部系统的集成时跨环境部署时会发生变化的几个典型例子。在数据库配置方面，在开发环境中我们可能会使用嵌入式数据库，并且能够加载测试数据；在生产环境中，可能更希望使用JNDI从容器中获取一个DataSource；而在QA">
+<meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模拟大数除法">
-<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95&#x2F;index.html">
+<meta property="og:title" content="Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域">
+<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="如果给你两个1000位的数字，你怎么得到它们除法的结果？如果你要用普通的出发运算的肯定是行不通的~所以这算是一种比较理想的计算方法。">
+<meta property="og:description" content="在软件开发时，有一个很大的挑战就是将应用程序从一种环境迁移到另一种环境中。在开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移也无法工作。数据库配置，加密算法已经与外部系统的集成时跨环境部署时会发生变化的几个典型例子。在数据库配置方面，在开发环境中我们可能会使用嵌入式数据库，并且能够加载测试数据；在生产环境中，可能更希望使用JNDI从容器中获取一个DataSource；而在QA">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-19T13:28:30.376Z">
+<meta property="og:updated_time" content="2019-11-13T04:13:55.038Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://yafengshuanger.cn/模拟大数除法/"/>
+  <link rel="canonical" href="http://yafengshuanger.cn/Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域/"/>
 
 
 
@@ -158,7 +158,7 @@
     })();
 </script>
 
-  <title>模拟大数除法 | 码农峰酱个人博客</title>
+  <title>Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域 | 码农峰酱个人博客</title>
 
   
       <!-- 球型气泡标签云 -->
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="亚峰">
@@ -345,7 +345,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">模拟大数除法</h2>
+          <h2 class="post-title" itemprop="name headline">Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域</h2>
         
 
         <div class="post-meta">
@@ -360,8 +360,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T21:06:47+08:00">
-                2019-10-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T11:46:15+08:00">
+                2019-11-13
               </time>
             
 
@@ -381,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -392,8 +392,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/PAT%E4%B9%99%E7%BA%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">PAT乙级</span>
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -409,7 +409,7 @@
 
           
           
-             <span id="/%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95/" class="leancloud_visitors" data-flag-title="模拟大数除法">
+             <span id="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数&#58;</span>
                 
                 <span title="字数">
-                  382
+                  3.5k
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">时长 &asymp;</span>
                 
                 <span title="时长">
-                  1 分钟
+                  13 分钟
                 </span>
               
             </span>
@@ -459,7 +459,7 @@
           <!-- 隐藏文章内标题下，内容描述
           
               <div class="post-description">
-                  如果给你两个1000位的数字，你怎么得到它们除法的结果？如果你要用普通的出发运算的肯定是行不通的~所以这算是一种比较理想的计算方法。
+                  在软件开发时，有一个很大的挑战就是将应用程序从一种环境迁移到另一种环境中。在开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移也无法工作。数据库配置，加密算法已经与外部系统的集成时跨环境部署时会发生变化的几个典型例子。在数据库配置方面，在开发环境中我们可能会使用嵌入式数据库，并且能够加载测试数据；在生产环境中，可能更希望使用JNDI从容器中获取一个DataSource；而在QA环境中，我们可能更希望配置为Commons DBCP连接池。而上述的三个方法相同的仅限于都生成类型为DataSource的bean，仅此而已。
               </div>
           
           -->
@@ -477,18 +477,121 @@
       
 
       
-        <a id="more"></a>
-<h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p> 本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。</p>
-<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在一行中依次给出 A 和 B，中间以 1 空格分隔。</p>
-<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>在一行中依次输出 Q 和 R，中间以 1 空格分隔。</p>
-<h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123456789050987654321</span> <span class="number">7</span></span><br></pre></td></tr></table></figure></div>
+        <h1 id="一、环境与profile"><a href="#一、环境与profile" class="headerlink" title="一、环境与profile"></a>一、环境与profile</h1><p>在软件开发时，有一个很大的挑战就是将应用程序从一种环境迁移到另一种环境中。在开发阶段中，某些环境相关做法可能并不适合迁移到生产环境中，甚至即便迁移也无法工作。数据库配置，加密算法已经与外部系统的集成时跨环境部署时会发生变化的几个典型例子。<br>在数据库配置方面，在开发环境中我们可能会使用嵌入式数据库，并且能够加载测试数据；在生产环境中，可能更希望使用JNDI从容器中获取一个DataSource；而在QA环境中，我们可能更希望配置为Commons DBCP连接池。而上述的三个方法相同的仅限于都生成类型为DataSource的bean，仅此而已。</p>
+<h2 id="1、配置profile-bean"><a href="#1、配置profile-bean" class="headerlink" title="1、配置profile bean"></a>1、配置profile bean</h2><p>在Spring3.1版本中引入了bean profile的功能。要使用profile，首先要将所有不同的bean定义整理到一个或多个profile中，在应用部署到每个环境时，要确保对应的profile处于激活状态。</p>
+<h3 id="1-1、在Java配置中，配置profile-bean"><a href="#1-1、在Java配置中，配置profile-bean" class="headerlink" title="1.1、在Java配置中，配置profile bean"></a>1.1、在Java配置中，配置profile bean</h3><p>使用@Profile注解指定某个bean属于哪一个profile，在3.1版本中@Profile注解只能用在类上面，而在3,2之后@Profile注解也可以用在方法上面，因此可以将不同的bean的声明放在同一个配置类中。下面举个简单例子说明一下。</p>
+<p>需要注意的是，尽管每个DataSource bean都被声明在一个profile中，并且只有当规定的profile被激活时，相应的bean才会被创建，但是可能会有其他的bean并没有声明在profile范围内。没有被指定的bean始终都会被创建，和激活那个profile无关。</p>
+<h3 id="1-2、激活profile"><a href="#1-2、激活profile" class="headerlink" title="1.2、激活profile"></a>1.2、激活profile</h3><p>Spring在确定哪个profile处于激活状态时，会检查两个独立的属性：spring.profiles.active和spring.profiles.default两个属性。active优先级高于default，当active没有设置的话，才会检查default。有多个方式来设置这两个属性：</p>
+<ul>
+<li>作为DispatcherServlet的初始化参数；</li>
+<li>作为web应用的上下文参数；</li>
+<li>作为JDNI条目；</li>
+<li>作为环境变量；</li>
+<li>在集成测试环境类上使用ActiveProfiles注解设置</li>
+</ul>
+<p>具体使用哪一种或几种需要根据自己情况，在用到上述方式时，还得参考更加详细的资料。不过在Spring4.0之后引入了一个更加通用的实现条件化bean的定义，在这个机制中，条件完全由开发者自己确定。<strong>有关Profile机制的代码调试好久总是出问题，我放弃了！！！！以后果断选择条件化的bean！！！！</strong></p>
+<h1 id="二、条件化的bean"><a href="#二、条件化的bean" class="headerlink" title="二、条件化的bean"></a>二、条件化的bean</h1><p><strong>假如你想要一个或多个bean在你想要的时候才会被创建，一种方法是可以使用之前提到过的Profile机制来实现，这里来说一种更加通用的机制即使用@Conditional注解，它可以用到类上，也可以用到带有@Bean注解的方法上。如果给定的条件计算结果为true，则创建该bean，否则不创建。</strong> 来看以下例子：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//三好学生</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"top_ten"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SanHaoStudent</span> <span class="keyword">implements</span> <span class="title">Student</span> </span>&#123; </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SanHaoStudent</span><span class="params">(String name, <span class="keyword">double</span> score)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----------三好学生---------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span>+name+<span class="string">" "</span>+<span class="string">"分数："</span>+score);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">17636684150141093474</span> <span class="number">3</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//优秀学生</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"top_twenty"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YouXiuStudent</span> <span class="keyword">implements</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YouXiuStudent</span><span class="params">(String name, <span class="keyword">double</span> score)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.score = score;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"----------优秀学生---------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"姓名："</span>+name+<span class="string">" "</span>+<span class="string">"分数："</span>+score);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>思想 ：<br>模拟正常的除法运算，从最高位开始每位数字除以除数，若此时能除过，则将该位除的结果输出，并对该位和除数取余，该余数和下一位数又组成一个数，继续除以除数，若能除过则继续上述步骤，否则商补0，向后借一位继续上述步骤，直至被除数最后一位，并输出余数。</p>
-<p>AC代码：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">division</span><span class="params">(<span class="keyword">char</span> *A,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">strlen</span>(A);</span><br><span class="line">	<span class="keyword">int</span> R;<span class="comment">//余数</span></span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)<span class="comment">//A[0]为最高位</span></span><br><span class="line">	&#123;</span><br><span class="line">		t = t*<span class="number">10</span>+(A[i]-<span class="string">'0'</span>);</span><br><span class="line">		<span class="keyword">if</span>(t&gt;=m)<span class="comment">//被除数能除过时 </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;t/m;</span><br><span class="line">			flag = <span class="literal">false</span>;	</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(!flag)<span class="comment">//被处除数除不过，则向后借一位，同时该位补0(不包括商的最高位) </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		t=t%m;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(flag)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>;	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>&lt;&lt;t&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> A[<span class="number">1010</span>];</span><br><span class="line">    <span class="keyword">int</span> B;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;A&gt;&gt;B;</span><br><span class="line">    division(A,B);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>再来看一下配置类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"top_ten"</span>)</span><br><span class="line">    <span class="meta">@Conditional</span>(ScoresTopTen.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Student <span class="title">sanHaoStudent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SanHaoStudent(<span class="string">"xiaoshuang"</span>,<span class="number">99</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"top_twenty"</span>)</span><br><span class="line">    <span class="meta">@Conditional</span>(ScoresTopTwenty.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Student <span class="title">youXiuStudent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> YouXiuStudent(env.getProperty(<span class="string">"yafneg"</span>,<span class="number">88</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
+<p><strong>注意在每个带有@Bean的方法上都有一个@Conditional注解，注解里面的类即为条件类，它们均实现了Condition接口，该接口中有一个matches方法，当该方法返回true时，对应得bean才会被创建</strong>。Condition接口内容如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext var1, AnnotatedTypeMetadata var2)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>再来看看两个条件类的具体实现：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScoresTopTen</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> score = <span class="number">99</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> score &gt;= <span class="number">90</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScoresTopTwenty</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> score = <span class="number">80</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> score&gt;=<span class="number">90</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>两个条件类里面的具体内容不重要，仅仅是为了说明问题。很显然第一个返回的时true，第二个返回的为false。如果代码不出错的情况下，此时应该会创建SanHaoStudent bean，而不会创建YouXiuStudent bean。</p>
+<p><strong>测试代码如下：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes = JavaConfig.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="meta">@org</span>.junit.Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        AnnotationConfigApplicationContext context = <span class="keyword">new</span> AnnotationConfigApplicationContext(JavaConfig.class);</span><br><span class="line">        Student student1 = (SanHaoStudent)context.getBean(<span class="string">"sanHaoStudent"</span>);</span><br><span class="line">        student1.showInfo();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Student student2 = (YouXiuStudent)context.getBean(<span class="string">"youXiuStudent"</span>);</span><br><span class="line">            student2.showInfo();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"YouXiuStudent未创建"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">运行结果如下：</span><br><span class="line">----------三好学生---------</span><br><span class="line">姓名：xiaoshuang 分数：<span class="number">99.0</span></span><br><span class="line">YouXiuStudent未创建</span><br></pre></td></tr></table></figure></div>
+
+
+<p><strong>从上述结果可知，的确只创建了SanHaoStudent  bean，而没有创建YouXiuStudent  bean。因此Spring的这个机制可以根据需要而创建需要的bean，而对于那些目前来说没用的bean可以先不创建，这样可以大大提高代码性能，减少对内存的消耗。</strong></p>
+<h1 id="三、解决Spring中自动装配的歧义性"><a href="#三、解决Spring中自动装配的歧义性" class="headerlink" title="三、解决Spring中自动装配的歧义性"></a>三、解决Spring中自动装配的歧义性</h1><p>在自动装配中有时候一个接口可能有多个实现类，则在自动注入bean时，Spring不能明确知道要注入哪个bean，因此可能会发生异常。空口无凭，代码为例：</p>
+<p>现有一个甜点（Dessert）接口，它有三个实现类，IceCream类，Cookie类和Cake类。</p>
+<p><strong>IceCream类</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IceCream</span> <span class="keyword">implements</span> <span class="title">Dessert</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getFavorite</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"最喜欢吃冰淇淋！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>Cookie 类</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cookie</span> <span class="keyword">implements</span> <span class="title">Dessert</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getFavorite</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"最喜欢吃曲奇！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>Cake 类</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cake</span> <span class="keyword">implements</span> <span class="title">Dessert</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getFavorite</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"最喜欢吃饼干！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>测试类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes = JavaConfig.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DessertTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Dessert dessert;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDessert</span><span class="params">(Dessert dessert)</span> </span>&#123;<span class="comment">//使用setter方法注入</span></span><br><span class="line">        <span class="keyword">this</span>.dessert = dessert;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">favoriteDessert</span><span class="params">()</span></span>&#123;</span><br><span class="line">        dessert.getFavorite();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p><strong>运行程序，默默地等待。扣个鼻屎，玩会手机，抬头一看，我草咋那么多红色日志。你没有猜错，出错啦！异常如下：</strong></p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: </span><br><span class="line">No qualifying bean of type <span class="string">'com.tyf.day5.Demo1.Dessert'</span> available: </span><br><span class="line">expected single matching bean but found <span class="number">3</span>: cake,cookie,iceCream</span><br></pre></td></tr></table></figure></div>
+
+<p>上述异常的大致意思就是在注入的过程中并有找到Desert类型唯一的bean，而是发现了三个即cake,cookie,iceCream。而在Spring自动注入时必须指明要注入哪个bean，这个得必须由开发者来指定，Spring容器是分不清到底应该注入哪个。<strong>解决歧义性的方式有三种：使用@Primary注解、使用@Qualifier注解对bean重命名以及使用自定义限定符注解（推荐使用）。</strong></p>
+<h2 id="1、-Primary注解"><a href="#1、-Primary注解" class="headerlink" title="1、@Primary注解"></a>1、@Primary注解</h2><p>存在多个相同类型的bean时，可以使用@Primary注解来标明哪一个bean为首选bean，以此来解决自动注入的歧义性。由于个人比较喜欢吃冰淇淋，因此我将IceCream作为首选bean，做法如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Primary</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IceCream</span> <span class="keyword">implements</span> <span class="title">Dessert</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getFavorite</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"最喜欢吃冰淇淋！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>做法很简单，即在某个类上直接添加@Primary注解即可，其他代码均不变。但是这种做法的局限性很大，如果有多个首选的bean，那么使用该注解就很难办到了。</p>
+<h2 id="2、-Qualifier注解"><a href="#2、-Qualifier注解" class="headerlink" title="2、@Qualifier注解"></a>2、@Qualifier注解</h2><p>使用@Qualifier注解的做法就是为每个bean都起一个别名，然后在注入某个bean时再来指定要注入的bean，这样做的目的是为了缩小可选bean的范围，最终能够达到一个bean满足规定的限制条件。做法如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IceCream类:</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Qualifier</span>(<span class="string">"cold"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IceCream</span> <span class="keyword">implements</span> <span class="title">Dessert</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getFavorite</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"最喜欢吃冰淇淋！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>测试类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes = JavaConfig.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DessertTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Dessert dessert;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"cold"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDessert</span><span class="params">(Dessert dessert)</span> </span>&#123;<span class="comment">//使用setter方法注入</span></span><br><span class="line">        <span class="keyword">this</span>.dessert = dessert;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">favoriteDessert</span><span class="params">()</span></span>&#123;</span><br><span class="line">        dessert.getFavorite();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">结果如下：</span><br><span class="line">最喜欢吃冰淇淋！</span><br></pre></td></tr></table></figure></div>
+
+<p>**</p>
+<blockquote>
+<p>注意：当使用自定义的@Qualifier的值时，最佳实践是为bean选择特征性或描述性的术语，而不是随便使用名字。</p>
+</blockquote>
+<p>**</p>
+<h2 id="3、使用自定义的限定符注解"><a href="#3、使用自定义的限定符注解" class="headerlink" title="3、使用自定义的限定符注解"></a>3、使用自定义的限定符注解</h2><p>由于Java中不允许在同一个条目上重复出现相同类型的注解，因此当出现具有相同特征的bean时，很难使用@Qualifier来限定唯一的bean。虽然不能使用相同类型的注解，但是可以使用不同类型的啊，因此可以自定义限定符注解。</p>
+<p><strong>首先来看一下如何来自定义注解：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(&#123;ElementType.CONSTRUCTOR,ElementType.FIELD,ElementType.METHOD,ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Qualifier</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Treate &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>上述代码实现了一个名为Treat的注解，由于它带有@Qualifier注解，因此这就是一个限定符注解。以同样的方式再定义@Cool注解和@CanCode注解。</p>
+<p>假如现在有两个人，他们都很帅，但是一个是程序员，一个是医生。他们的特征都是很帅，因此只用Cool这个特征不能分清他们，还得在使用注解加以区分。详细代码如下：</p>
+<p><strong>医生类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Cool</span></span><br><span class="line"><span class="meta">@Treate</span>  <span class="comment">//自定义限定符注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Doctor</span> <span class="keyword">implements</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">career</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是一名医生"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>程序员类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Cool</span></span><br><span class="line"><span class="meta">@CanCode</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Programmer</span> <span class="keyword">implements</span> <span class="title">People</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">career</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我是一个程序员"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>测试类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="meta">@ContextConfiguration</span>(classes = JavaConfig.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> People people;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@Cool</span></span><br><span class="line">    <span class="meta">@Treate</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPeople</span><span class="params">(People people)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.people = people;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@org</span>.junit.Test</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        people.career();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br><span class="line">我是一名医生</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>比较推荐第三种方法，因为无论有多少个重复特征，只要不是同一个东西都能够再加特征来加以区分，因此今后尽量使用该方法来解决歧义性。</strong></p>
+<h1 id="四、bean的作用域"><a href="#四、bean的作用域" class="headerlink" title="四、bean的作用域"></a>四、bean的作用域</h1><h3 id="Spring定义了下面四种bean的作用域："><a href="#Spring定义了下面四种bean的作用域：" class="headerlink" title="Spring定义了下面四种bean的作用域："></a>Spring定义了下面四种bean的作用域：</h3><p>（1）单例（Singleton）：在整个应用中只创建bean的一个实例；<br>（2）原型（Prototyoe）：在每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例；<br>（3）会话（Session）：在web应用中，为每个回话创建一个bean实例；<br>（4）请求（Request）：在web应用中为每个请求创建一个bean实例。</p>
+<h4 id="1、单例（Singleton）和原型（Prototype）"><a href="#1、单例（Singleton）和原型（Prototype）" class="headerlink" title="1、单例（Singleton）和原型（Prototype）"></a>1、单例（Singleton）和原型（Prototype）</h4><p> 单例是Spring默认的作用域，但对于容易变的类型，单例并不合适。若要选择其他作用域，就需要使用@Scope注解，它可以和@Component以及@Bean注解一起使用。</p>
+<p>例如将NotePad bean的作用域设置为原型，在组建扫描来发现和声明bean时，可以直接和@Component一起使用。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Scope</span>(ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotePad</span></span>&#123;</span><br><span class="line">    <span class="comment">//省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>如上所示即为将NotePad的作用域设置为原型，同样还可以在Java配置文件中和@Bean一起使用或者在XML文件中配置，不再赘述。</p>
+<h4 id="2、会话（Session）和请求（Request）"><a href="#2、会话（Session）和请求（Request）" class="headerlink" title="2、会话（Session）和请求（Request）"></a>2、会话（Session）和请求（Request）</h4><p>会话和请求作用域一般都用于web应用中，电商平台中的购物车是一个典型的会话作用域的bean。如果购物车是单例的，那么在整个应用中所有用户都使用一个bean；如果购物车是原型的，则在某处向购物车添加商品后，在应用的另一处就可能不可用了，因为该bean时原型的。购物车和用户有很强的关联性，每个用户一个购物车，因此会话作用域的购物车更合适。设置某个bean为Session作用域的做法如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Scope</span>(value = WebApplicationContext.SCOPE_PROTOTYPE,proxyMode = ScopedProxyMode.INTERFACE)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ShopCar</span></span>&#123;</span><br><span class="line">    <span class="comment">//省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>上述设置会让Spring容器创建多个ShopCar bean的实例，但是对于一个会话来说它只会创建一个实例，在当前会话相关的操作中，这个bean相当于还是单例的。</p>
+<p>需要注意的是proxyMode 属性设置为ScopedProxyMode.INTERFACE，这个属性解决了将会话作用域的bean注入到单例bean中引发的问题。先来看一个proxyMode 的应用场景。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StoreService</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ShopCart shopCart;</span><br><span class="line">    <span class="meta">@Autorwired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setShopCart</span><span class="params">(ShopCart shopCart)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ShopCart = shopCart;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>因为StoreService是一个单例的bean，会在Spring应用上下文加载的时候创建。当它创建的时候会试图将ShopCart bean注入到setShopCart方法中，但是由于ShopCart 的作用域是会话的，此时并不存在，直到某个用户进入系统创建会话后，才会出现ShopCart实例。</p>
+<p>另外系统中将会有多个ShopCart实例：每个用户一个。我们并不想让Spring注入某个固定的ShopCart实例到StoreService中。我们希望的是当StopService处理购物车功能时，它所使用的ShopCart实例恰好是当前会话对应的那一个。</p>
+<p>Spring并不会将实际的ShopCart bean注入到StoreService中，Spring会注入一个到ShopCart  bean的代理中。这个代理会暴露于ShopCart相同的方法，所以StoreService会认为它就是一个购物车。但是当StoreService调用ShopCart的方法时，代理会对其进行懒解析并将调用委托给会话作用域内真正的ShopCart bean。</p>
+<p>ScopedProxyMode.INTERFACE表明代理要实现这个代理要实现ShopCart接口，并将调用委托给实现bean。如果ShopCart是一个类的话，Spring没有办法创建基于接口的代理，此时必须使用CGLib来生成基于类的代理，做法即为将proxyMode设置为ScopedProxyMode.TARGET_CLASS。</p>
+<p>**</p>
+<blockquote>
+<p>注：请求作用域的bean会面临相同的装配问题</p>
+</blockquote>
+<p>**</p>
 
 
         
@@ -564,9 +667,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"> <i class="fa fa-tag"></i> C++</a>
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
           
-            <a href="/tags/PAT%E4%B9%99%E7%BA%A7/" rel="tag"> <i class="fa fa-tag"></i> PAT乙级</a>
+            <a href="/tags/Spring/" rel="tag"> <i class="fa fa-tag"></i> Spring</a>
           
         </div>
       
@@ -579,8 +682,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/%E5%8F%98%E9%87%8F%E5%9C%A8Java%E4%B8%AD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/" rel="next" title="变量在Java中的运行顺序">
-                <i class="fa fa-chevron-left"></i> 变量在Java中的运行顺序
+              <a href="/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%8F%8A%E6%B5%85%E5%A4%8D%E5%88%B6%E5%92%8C%E6%B7%B1%E5%A4%8D%E5%88%B6/" rel="next" title="软件设计模式之原型模式及浅复制和深复制">
+                <i class="fa fa-chevron-left"></i> 软件设计模式之原型模式及浅复制和深复制
               </a>
             
           </div>
@@ -588,10 +691,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/PAT%E4%B9%99%E7%BA%A71044%EF%BC%9A%E7%81%AB%E6%98%9F%E6%95%B0%E5%AD%97/" rel="prev" title="PAT乙级1044：火星数字">
-                PAT乙级1044：火星数字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1158,7 +1257,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式："><span class="nav-number">2.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式："><span class="nav-number">3.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例："><span class="nav-number">4.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例："><span class="nav-number">5.</span> <span class="nav-text">输出样例：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、环境与profile"><span class="nav-number">1.</span> <span class="nav-text">一、环境与profile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、配置profile-bean"><span class="nav-number">1.1.</span> <span class="nav-text">1、配置profile bean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、在Java配置中，配置profile-bean"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1、在Java配置中，配置profile bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、激活profile"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2、激活profile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、条件化的bean"><span class="nav-number">2.</span> <span class="nav-text">二、条件化的bean</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、解决Spring中自动装配的歧义性"><span class="nav-number">3.</span> <span class="nav-text">三、解决Spring中自动装配的歧义性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-Primary注解"><span class="nav-number">3.1.</span> <span class="nav-text">1、@Primary注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、-Qualifier注解"><span class="nav-number">3.2.</span> <span class="nav-text">2、@Qualifier注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、使用自定义的限定符注解"><span class="nav-number">3.3.</span> <span class="nav-text">3、使用自定义的限定符注解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、bean的作用域"><span class="nav-number">4.</span> <span class="nav-text">四、bean的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring定义了下面四种bean的作用域："><span class="nav-number">4.0.1.</span> <span class="nav-text">Spring定义了下面四种bean的作用域：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、单例（Singleton）和原型（Prototype）"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">1、单例（Singleton）和原型（Prototype）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、会话（Session）和请求（Request）"><span class="nav-number">4.0.1.2.</span> <span class="nav-text">2、会话（Session）和请求（Request）</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
