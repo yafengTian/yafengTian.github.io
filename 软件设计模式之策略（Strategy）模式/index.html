@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo个人博客,NexT美化优化,Leaf,Github Pages,博客相册" />
+  <meta name="keywords" content="Java,设计模式," />
 
 
 
@@ -101,15 +101,18 @@
 
 
 
-<meta name="description" content="扶摇直上九千里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;categories&#x2F;index.html">
+<meta name="description" content="个人感觉这里的策略模式和简单工厂模式有很大的相似之处，简单工厂模式也是将不同的算法封装起来，但是两者的侧重点不同。简单工厂模式侧重的是“工厂”的作用，即生产线准备好，然后直接生产对象，更多着重的是“流水线”式的生产，当需要某个产品时开动生产线生产就行，不用再关心内部的实现细节；而策略模式更加着重的是对策略的封装以及策略之间的替换，根据不同的条件做到随时可以悄无声息的替换。">
+<meta name="keywords" content="Java,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件设计模式之策略（Strategy）模式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%EF%BC%88Strategy%EF%BC%89%E6%A8%A1%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="扶摇直上九千里">
+<meta property="og:description" content="个人感觉这里的策略模式和简单工厂模式有很大的相似之处，简单工厂模式也是将不同的算法封装起来，但是两者的侧重点不同。简单工厂模式侧重的是“工厂”的作用，即生产线准备好，然后直接生产对象，更多着重的是“流水线”式的生产，当需要某个产品时开动生产线生产就行，不用再关心内部的实现细节；而策略模式更加着重的是对策略的封装以及策略之间的替换，根据不同的条件做到随时可以悄无声息的替换。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-17T07:04:19.425Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191114203809165.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-14T13:26:28.082Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191114203809165.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -139,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://yafengshuanger.cn/categories/"/>
+  <link rel="canonical" href="http://yafengshuanger.cn/软件设计模式之策略（Strategy）模式/"/>
 
 
 
@@ -157,7 +160,7 @@
     })();
 </script>
 
-  <title>categories | 码农峰酱个人博客</title>
+  <title>软件设计模式之策略（Strategy）模式 | 码农峰酱个人博客</title>
 
   
       <!-- 球型气泡标签云 -->
@@ -315,178 +318,325 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%EF%BC%88Strategy%EF%BC%89%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="亚峰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="码农峰酱个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">categories</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 5 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/PAT%E4%B9%99%E7%BA%A7/">PAT乙级</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">3</span></li></ul></li></ul>
-            </div>
+          <h2 class="post-title" itemprop="name headline">软件设计模式之策略（Strategy）模式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+             
+
+             
 
             
-                 
-                 <style>
-
-  .categorylove {
-      width: 500px;
-      height: 650px;
-      position: relative;
-      margin: 60px auto;
-  }
-
-  .categorylove a {
-      position: absolute;
-      left: 0;
-      //color: goldenrod;
-      //color: #e804048f;
-      font-size: 20px;
-      font-family: sans-serif;
-      text-shadow: 0 0 1em white;
-      animation:
-          x-move 10s ease-in-out infinite alternate,
-          y-move 20s linear infinite;
-      animation-delay: calc(30s / var(--particles) * var(--n) * -1);
-      user-select: auto; // none
-  }
-
-  .categorylove a:first-child {
-      color: orangered;
-      font-size: 3em;
-      text-shadow:
-          0 0 0.1em black,
-          0 0 1em white;
-      z-index: 1;
-  }
-
-  @keyframes x-move {
-      to {
-          left: 450px;
-      }
-  }
-
-  @keyframes y-move {
-      0% { transform: translateY(180px); }
-      10% { transform: translateY(45px); }
-      15% { transform: translateY(5px); }
-      18% { transform: translateY(0); }
-      20% { transform: translateY(5px); }
-      22% { transform: translateY(35px); }
-      24% { transform: translateY(65px); }
-      25% { transform: translateY(110px); }
-      26% { transform: translateY(65px); }
-      28% { transform: translateY(35px); }
-      30% { transform: translateY(5px); }
-      32% { transform: translateY(0); }
-      35% { transform: translateY(5px); }
-      40% { transform: translateY(45px); }
-      50% { transform: translateY(180px); }
-      71% { transform: translateY(430px); }
-      72.5% { transform: translateY(440px); }
-      75% { transform: translateY(450px); }
-      77.5% { transform: translateY(440px); }
-      79% { transform: translateY(430px); }
-      100% { transform: translateY(180px); }
-  }
-
-  /* 移动端样式 */
-  @media (max-width: 767px) {
-    .categorylove{
-        width: 360px;
-        height: 450px;
-        margin: 30px auto;
-    }
-    @keyframes x-move {
-        to {
-            left: 285px;
-        }
-    }
-  }
-
-</style>
-
-<div class="categorylove"></div>
-
-<script type="text/javascript">
-
-      var categories = document.getElementsByClassName('category-all');
-     //var categories = document.querySelector('.category-all');
-
-     //隐藏category-all这个div
-     categories[0].setAttribute("hidden", "hidden");
-
-     var category = categories[0].getElementsByTagName('a');
-
-     var words = ['❤️'];
-     for(var i = 0 ; i < category.length ; i ++){
-       // words.push(category[i].innerHTML)
-         words.push(category[i]);
-         words.push('♠');
-     }
-     words.push('💕');
-
-     var dom = {
-         love: document.querySelector('.categorylove')
-     }
-
-     dom.love.style.setProperty('--particles', words.length)
-
-     words.forEach((word, i) => {
-
-         let atag = document.createElement('a');
-         atag.style.setProperty('--n', i + 1);
-
-         atag.style.setProperty('text-decoration', 'none');
-         atag.style.setProperty('border-bottom', 'none');
-
-         var r=Math.floor(Math.random()*75+130);
-         var g=Math.floor(Math.random()*75+100);
-         var b=Math.floor(Math.random()*75+80);
-         atag.style.setProperty("color", "rgb("+r+","+g+","+b+")");
-
-         atag.setAttribute("href", word.href);
-         atag.innerText = word.innerText;
-
-         if(word.href == undefined){
-            atag.setAttribute("href", "#");
-            atag.innerText = word;
-         }
-
-         dom.love.appendChild(atag);
-     })
-
-</script>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T20:42:29+08:00">
+                2019-11-14
+              </time>
+            
 
             
 
-          </div>
+            
+          </span>
 
-        <!-- 友情链接-->
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%EF%BC%88Strategy%EF%BC%89%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="软件设计模式之策略（Strategy）模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          <!--
+          
+          -->
+
+          
+            <span class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数&#58;</span>
+                
+                <span title="字数">
+                  768
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">时长 &asymp;</span>
+                
+                <span title="时长">
+                  3 分钟
+                </span>
+              
+            </span>
+          
+
+          <!-- 隐藏文章内标题下，内容描述
+          
+              <div class="post-description">
+                  个人感觉这里的策略模式和简单工厂模式有很大的相似之处，简单工厂模式也是将不同的算法封装起来，但是两者的侧重点不同。简单工厂模式侧重的是“工厂”的作用，即生产线准备好，然后直接生产对象，更多着重的是“流水线”式的生产，当需要某个产品时开动生产线生产就行，不用再关心内部的实现细节；而策略模式更加着重的是对策略的封装以及策略之间的替换，根据不同的条件做到随时可以悄无声息的替换。
+              </div>
+          
+          -->
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h3><p>1、软件系统中有多个功能类似的算法，系统根据不同的时机来选择不同的算法完成某个功能；<br>2、不需要让客户端知道复杂的，与算法相关的数据结构；<br>3、在软件系统中有很多的行为，如果不采取一定的模式，这些行为就只能使用多重的条件语句来实现。</p>
+<h3 id="二、策略模式定义"><a href="#二、策略模式定义" class="headerlink" title="二、策略模式定义"></a>二、策略模式定义</h3><p>策略模式（Strategy Pattern）：策略模式定义了一系列的算法，并将每个算法封装起来，并让它们相互替换。策略模式让算法独立于使用它的客户端而变化。</p>
+<h3 id="三、UML图（来自大话设计模式）"><a href="#三、UML图（来自大话设计模式）" class="headerlink" title="三、UML图（来自大话设计模式）"></a>三、UML图（来自大话设计模式）</h3><p><img src="https://img-blog.csdnimg.cn/20191114203809165.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="四、代码实现"><a href="#四、代码实现" class="headerlink" title="四、代码实现"></a>四、代码实现</h3><p>假设某个学生管理系统中有一个这样的功能：根据学生某个学科成绩来排名，但是学生人数不定，得根据学生数目来使用不同的排序算法，假如可供选择的排序算法有冒泡排序、选择排序、插入排序。</p>
+<p><strong>排序算法公共接口：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Sort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>冒泡排序：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaoPaoSort</span> <span class="keyword">implements</span> <span class="title">Sort</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"冒泡排序"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>选择排序：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChooseSort</span> <span class="keyword">implements</span> <span class="title">Sort</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"选择排序"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>插入排序：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span> <span class="keyword">implements</span>  <span class="title">Sort</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"插入排序"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>Context类：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SortContext</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  Sort sort;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Sort <span class="title">getSortAlgorithm</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr.length&lt;<span class="number">5</span>)&#123;</span><br><span class="line">            sort = <span class="keyword">new</span> MaoPaoSort();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr.length&lt;<span class="number">10</span>)&#123;</span><br><span class="line">            sort = <span class="keyword">new</span> ChooseSort();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr.length&lt;<span class="number">15</span>)&#123;</span><br><span class="line">            sort = <span class="keyword">new</span> InsertSort();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sort;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>客户端：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">56</span>,<span class="number">7</span>,<span class="number">7</span>&#125;;</span><br><span class="line">        SortContext context = <span class="keyword">new</span> SortContext();</span><br><span class="line">        Sort sort = context.getSortAlgorithm(arr);</span><br><span class="line">        sort.sort(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>从上面代码可以看出，策略模式包含四个部分，即公共接口（Sort），具体策略类（InsertSort，ChooseSort以及MaoPaoSort）、上下文类（SortContext）以及客户端类。上下文类的作用很明显，即根据不同的条件来为客户端提供不同的排序算法，在上述代码中的写法是一种比较优的写法，将所有的判断条件都放在Context类中，降低客户端类的复杂程度，这是一种结合简单工厂模式的一种写法。</p>
+<p><strong>个人感觉这里的策略模式和简单工厂模式有很大的相似之处，简单工厂模式也是将不同的算法封装起来，但是两者的侧重点不同。简单工厂模式侧重的是“工厂”的作用，即生产线准备好，然后直接生产对象，更多着重的是“流水线”式的生产，当需要某个产品时开动生产线生产就行，不用再关心内部的实现细节；而策略模式更加着重的是对策略的封装以及策略之间的替换，根据不同的条件做到随时可以悄无声息的替换。</strong></p>
+
+
         
-      </div>
-      
-      
+
       
     </div>
+
+      <!-- 相关文章推荐 -->
+     
+          
+
+
+     
+
     
     
     
+
+    <div>
+          
+            
+
+          
+    </div>
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div class="read-over">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+      <div>
+        <div class="share_reward">
+  <div>坚持原创技术分享，感谢您的支持和鼓励！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="亚峰 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="亚峰 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"> <i class="fa fa-tag"></i> 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Spring%E9%AB%98%E7%BA%A7%E8%A3%85%E9%85%8D%EF%BC%9AProfile%E3%80%81%E6%9D%A1%E4%BB%B6%E5%8C%96bean%E3%80%81%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E7%9A%84%E6%AD%A7%E4%B9%89%E6%80%A7%E4%BB%A5%E5%8F%8Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" rel="next" title="Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域">
+                <i class="fa fa-chevron-left"></i> Spring高级装配：Profile、条件化bean、自动装配的歧义性以及bean的作用域
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+         <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+
+
+      
+    </div>
   </div>
 
 
@@ -528,8 +678,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -999,6 +1158,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、应用场景"><span class="nav-number">1.</span> <span class="nav-text">一、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、策略模式定义"><span class="nav-number">2.</span> <span class="nav-text">二、策略模式定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、UML图（来自大话设计模式）"><span class="nav-number">3.</span> <span class="nav-text">三、UML图（来自大话设计模式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、代码实现"><span class="nav-number">4.</span> <span class="nav-text">四、代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1586,38 +1761,35 @@ show_date_time();
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1642,9 +1814,9 @@ show_date_time();
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+            if (localhost.test(document.URL)) return;
+            addCount(Counter);
           
         });
     });
