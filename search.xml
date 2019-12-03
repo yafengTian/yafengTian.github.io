@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Proxy）以及CGLIB代理</title>
-    <url>/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Static%20Proxy%EF%BC%89%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Dynamic%20Proxy%EF%BC%89%E4%BB%A5%E5%8F%8ACGLIB%E4%BB%A3%E7%90%86/</url>
+    <url>/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88StaticProxy%EF%BC%89%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88DynamicProxy%EF%BC%89%E4%BB%A5%E5%8F%8ACGLIB%E4%BB%A3%E7%90%86/</url>
     <content><![CDATA[<h2 id="一、代理模式"><a href="#一、代理模式" class="headerlink" title="一、代理模式"></a>一、代理模式</h2><p>为其他对象提供一种代理以控制对这个对象的访问。</p>
 <h2 id="二、代理模式结构图"><a href="#二、代理模式结构图" class="headerlink" title="二、代理模式结构图"></a>二、代理模式结构图</h2><p><img src="https://img-blog.csdnimg.cn/20191203155442289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="代理模式结构图"></p>
 <h2 id="三、静态代理"><a href="#三、静态代理" class="headerlink" title="三、静态代理"></a>三、静态代理</h2><p>这种代理方式需要代理对象和目标对象实现一样的接口。</p>
