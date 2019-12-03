@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Java,面试知识点," />
+  <meta name="keywords" content="Java,设计模式," />
 
 
 
@@ -101,22 +101,18 @@
 
 
 
-<meta name="description" content="同年同月：之间两个天数相减即可，即（day1-day2-1）很简单。同年不同月：先计算完整月数的天数，即从指定日期的写个月开始计算，计算每个月有多少天，都加起来即可">
-<meta name="keywords" content="Java,面试知识点">
+<meta name="description" content="小时候看到喜欢的女孩子，就会给写情书，但是人怂又不敢亲自去送，因此只好请求别人代理我去送。上述事实是一个代理模式的简单应用，一起来来看看如何让别人来代理你去送情书">
+<meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算两个日期之间的天数">
-<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6&#x2F;index.html">
+<meta property="og:title" content="Proxy）以及CGLIB代理">
+<meta property="og:url" content="http:&#x2F;&#x2F;yafengshuanger.cn&#x2F;%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Static%20Proxy%EF%BC%89%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Dynamic%20Proxy%EF%BC%89%E4%BB%A5%E5%8F%8ACGLIB%E4%BB%A3%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="码农峰酱个人博客">
-<meta property="og:description" content="同年同月：之间两个天数相减即可，即（day1-day2-1）很简单。同年不同月：先计算完整月数的天数，即从指定日期的写个月开始计算，计算每个月有多少天，都加起来即可">
+<meta property="og:description" content="小时候看到喜欢的女孩子，就会给写情书，但是人怂又不敢亲自去送，因此只好请求别人代理我去送。上述事实是一个代理模式的简单应用，一起来来看看如何让别人来代理你去送情书">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313152945838.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313153055453.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313153142194.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313153312374.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313153516136.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-10-17T13:56:32.541Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191203155442289.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-12-03T08:00:57.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190313152945838.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191203155442289.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -146,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://yafengshuanger.cn/Java中的反射机制/"/>
+  <link rel="canonical" href="http://yafengshuanger.cn/静态代理（Static Proxy）、动态代理（Dynamic Proxy）以及CGLIB代理/"/>
 
 
 
@@ -164,7 +160,7 @@
     })();
 </script>
 
-  <title>计算两个日期之间的天数 | 码农峰酱个人博客</title>
+  <title>Proxy）以及CGLIB代理 | 码农峰酱个人博客</title>
 
   
       <!-- 球型气泡标签云 -->
@@ -334,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yafengshuanger.cn/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Static%20Proxy%EF%BC%89%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Dynamic%20Proxy%EF%BC%89%E4%BB%A5%E5%8F%8ACGLIB%E4%BB%A3%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="亚峰">
@@ -351,7 +347,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">计算两个日期之间的天数</h2>
+          <h2 class="post-title" itemprop="name headline">Proxy）以及CGLIB代理</h2>
         
 
         <div class="post-meta">
@@ -366,8 +362,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T15:49:34+08:00">
-                2019-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T15:57:41+08:00">
+                2019-12-03
               </time>
             
 
@@ -394,6 +390,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -404,7 +411,7 @@
 
           
           
-             <span id="/Java%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="计算两个日期之间的天数">
+             <span id="/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Static%20Proxy%EF%BC%89%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%88Dynamic%20Proxy%EF%BC%89%E4%BB%A5%E5%8F%8ACGLIB%E4%BB%A3%E7%90%86/" class="leancloud_visitors" data-flag-title="Proxy）以及CGLIB代理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +436,7 @@
                   <span class="post-meta-item-text">字数&#58;</span>
                 
                 <span title="字数">
-                  1.1k
+                  1.2k
                 </span>
               
 
@@ -454,7 +461,7 @@
           <!-- 隐藏文章内标题下，内容描述
           
               <div class="post-description">
-                  同年同月：之间两个天数相减即可，即（day1-day2-1）很简单。同年不同月：先计算完整月数的天数，即从指定日期的写个月开始计算，计算每个月有多少天，都加起来即可
+                  小时候看到喜欢的女孩子，就会给写情书，但是人怂又不敢亲自去送，因此只好请求别人代理我去送。上述事实是一个代理模式的简单应用，一起来来看看如何让别人来代理你去送情书
               </div>
           
           -->
@@ -472,14 +479,42 @@
       
 
       
-        <p>思路：</p>
-<ol>
-<li>同年同月：之间两个天数相减即可，即（day1-day2-1）很简单。</li>
-<li>同年不同月：先计算完整月数的天数，即从指定日期的写个月开始计算，计算每个月有多少天，都加起来即可；然后计算指定日期到月初和月末的天数。如2019-6-12和2019-2-3，我们先计算3、4、5这三个完整月份的天数，然后计算6月12日到月初的天数，再计算2月3日到月末的天数，三者加起来就是两日期之间的天数。</li>
-<li>年月日都不同：思路和计算不同月的类似。我们可以先计算两个年份之间完整年份的天数，然后再计算较大年份距离年初（1月1日）的天数，再计算较小年份距离年末（12-31）的天数，将三者加起来就是两个日期之间的天数。<a id="more"></a>
-下面帖出我自己的代码：<br><img src="https://img-blog.csdnimg.cn/20190313152945838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20190313153055453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190313153142194.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190313153312374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190313153516136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-</ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HowManyDays</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> day;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> year;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setYear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.year = year;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMonth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> month;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMonth</span><span class="params">(<span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.month = month;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> day;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDay</span><span class="params">(<span class="keyword">int</span> day)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.day = day;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">HowManyDays</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> day)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.year = year;</span><br><span class="line">		<span class="keyword">this</span>.month = month;</span><br><span class="line">		<span class="keyword">this</span>.day = day;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">HowManyDays</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 判断某年是否是闰年</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (year % <span class="number">400</span> == <span class="number">0</span> || (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 某年某月 月有多少天</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">daysOfMonth</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(month&gt;<span class="number">12</span>||month&lt;=<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"日期不合法"</span>);</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (month == <span class="number">1</span> || month == <span class="number">3</span> || month == <span class="number">5</span> || month == <span class="number">7</span> || month == <span class="number">8</span> || month == <span class="number">10</span> || month == <span class="number">12</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (month == <span class="number">4</span> || month == <span class="number">6</span> || month == <span class="number">9</span> || month == <span class="number">11</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (isLeapYear(year) &amp;&amp; month == <span class="number">2</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;<span class="comment">// 非闰年二月28天</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 计算机本年一共多少天</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">daysOfYear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		result = <span class="number">7</span> * <span class="number">31</span> + <span class="number">4</span> * <span class="number">30</span>;<span class="comment">// 不包括闰月</span></span><br><span class="line">		<span class="keyword">if</span> (isLeapYear(year)) &#123;</span><br><span class="line">			result += <span class="number">29</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			result += <span class="number">28</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 计算指定日期到年初的天数</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">daysOfYearThis</span><span class="params">(HowManyDays date)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> year=date.getYear();</span><br><span class="line">		<span class="keyword">int</span> month=date.getMonth();</span><br><span class="line">		<span class="keyword">int</span> day=date.getDay();</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> month2 = <span class="number">1</span>;<span class="comment">// 该年的元月</span></span><br><span class="line">		<span class="keyword">if</span>(year&lt;<span class="number">0</span>||month&gt;<span class="number">12</span>||month&lt;<span class="number">0</span>||day&gt;<span class="number">31</span>||day&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"日期不合法"</span>);</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (month != month2) &#123;</span><br><span class="line">			result += daysOfMonth(year, month2);</span><br><span class="line">			month2++;</span><br><span class="line">		&#125;</span><br><span class="line">		result = result + day;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 计算指定日期到年末的天数</span></span><br><span class="line"><span class="comment">	 * 思路：先算完整的月份，即从当前日期的下一个月算起，直到下一年的1月1日，此时算出了下一个月到1月1日之间的天数</span></span><br><span class="line"><span class="comment">	 * 再加上此时日期到月底的天数，从而得到本日期到年末之间的天数</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">daysOfYear_Next</span><span class="params">(HowManyDays date)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> year=date.getYear();</span><br><span class="line">		<span class="keyword">int</span> month=date.getMonth();</span><br><span class="line">		<span class="keyword">int</span> day=date.getDay();</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> month2 = <span class="number">1</span>;<span class="comment">// 下一年的元月</span></span><br><span class="line">		<span class="keyword">int</span> m = month;</span><br><span class="line">		<span class="keyword">if</span>(year&lt;<span class="number">0</span>||month&lt;<span class="number">0</span>||month&gt;<span class="number">12</span>||day&gt;<span class="number">31</span>||day&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"日期不合法"</span>);</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (month2 != m) &#123;</span><br><span class="line">			m++;<span class="comment">// 先计算下一月到次年1月1日的天数</span></span><br><span class="line">			<span class="keyword">if</span> (m &lt; <span class="number">12</span>) &#123;</span><br><span class="line">				result += daysOfMonth(year, m);</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == <span class="number">12</span>) &#123;<span class="comment">//年内最后一个月</span></span><br><span class="line">				result += daysOfMonth(year, m);<span class="comment">//计算12月份天数</span></span><br><span class="line">				result += daysOfMonth(year, month) - day;<span class="comment">//daysOfMonth(year, month) - day计算指定日期到月末天数</span></span><br><span class="line">				m = <span class="number">1</span>;<span class="comment">//循环结束</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * date1&gt;date2</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">how_many_day</span><span class="params">(HowManyDays date1,HowManyDays date2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> m1, m2, y1, y2;</span><br><span class="line">		<span class="comment">//exchange(date1, date2);</span></span><br><span class="line">		<span class="comment">//System.out.println(date1.getYear()+""+date1.getMonth()+" "+date1.getDay());</span></span><br><span class="line">		m1 = date1.getMonth();</span><br><span class="line">		m2 = date2.getMonth();</span><br><span class="line">		y1 = date1.getYear();</span><br><span class="line">		y2 = date2.getYear();</span><br><span class="line">		<span class="keyword">if</span> (date1.getYear() == date2.getYear() &amp;&amp; date1.getMonth() == date2.getMonth()) &#123;<span class="comment">// 同年同月</span></span><br><span class="line">			result = Math.abs(date1.getDay() - date2.getDay());<span class="comment">//直接计算日期天数之间的差值</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (date1.getYear() == date2.getDay()) &#123;<span class="comment">// 同年不同月</span></span><br><span class="line">			<span class="keyword">while</span> ((m2 + <span class="number">1</span>) != m1) &#123;</span><br><span class="line">				result += daysOfMonth(date2.getYear(), m2);</span><br><span class="line">				m2++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">			 * daysOfMonth(year2, month2)-day2-1 计算较小月距离月末还有多少天</span></span><br><span class="line"><span class="comment">			 */</span></span><br><span class="line">			result = result + date1.getDay() + daysOfMonth(date2.getYear(), date2.getMonth()) - date2.getDay() - <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;<span class="comment">// 不同年，不同月</span></span><br><span class="line">			<span class="keyword">while</span> (y1 != (y2+<span class="number">1</span>)) &#123;<span class="comment">//计算完整年的所有天数</span></span><br><span class="line">				result += daysOfYear(y2);</span><br><span class="line">				y2++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">			 * 在所有完整年计算完之后，再加上较大年份距离年初的天数和较小年份到年初的天数</span></span><br><span class="line"><span class="comment">			 * */</span></span><br><span class="line">			result += daysOfYearThis(date1) + daysOfYear_Next(date2);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String ags[])</span> </span>&#123;</span><br><span class="line">		HowManyDays hd = <span class="keyword">new</span> HowManyDays();</span><br><span class="line">		HowManyDays date1=<span class="keyword">new</span> HowManyDays(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">13</span>);</span><br><span class="line">		HowManyDays date2=<span class="keyword">new</span> HowManyDays(<span class="number">2017</span>, <span class="number">10</span>, <span class="number">12</span>);</span><br><span class="line">		<span class="keyword">int</span> days = hd.how_many_day(date1,date2);</span><br><span class="line">		System.out.println(days);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+        <h2 id="一、代理模式"><a href="#一、代理模式" class="headerlink" title="一、代理模式"></a>一、代理模式</h2><p>为其他对象提供一种代理以控制对这个对象的访问。</p>
+<h2 id="二、代理模式结构图"><a href="#二、代理模式结构图" class="headerlink" title="二、代理模式结构图"></a>二、代理模式结构图</h2><p><img src="https://img-blog.csdnimg.cn/20191203155442289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvZGVyX1lhZmVuZw==,size_16,color_FFFFFF,t_70" alt="代理模式结构图"></p>
+<h2 id="三、静态代理"><a href="#三、静态代理" class="headerlink" title="三、静态代理"></a>三、静态代理</h2><p>这种代理方式需要代理对象和目标对象实现一样的接口。</p>
+<p><strong>1、优点：</strong> 可以在不修改目标对象的前提下扩展目标对象的功能。<br><strong>2、缺点：</strong> 冗余：由于代理对象要实现与目标对象一致的接口，会产生过多的代理类。不易维：一旦接口增加方法，目标对象与代理对象都要进行修改。</p>
+<p><strong>3、代码实现：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//被追女孩子类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Girl</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Girl</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*小时候看到喜欢的女孩子，就会给写情书，但是人怂又不敢亲自去送，因此只好请求别人代理我去送。</span></span><br><span class="line"><span class="comment">*上述事实是一个代理模式的简单应用，一起来来看看如何让别人来代理你去送情书</span></span><br><span class="line"><span class="comment">*公共接口 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoveLetter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendLoveLetter</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 追求者类</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Suitor</span> <span class="keyword">implements</span> <span class="title">LoveLetter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendLoveLetter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"哈喽，"</span>+name+<span class="string">"这是亚峰给你的情书！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 追求者代理类</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuitorProxy</span> <span class="keyword">implements</span> <span class="title">LoveLetter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> LoveLetter suitor;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendLoveLetter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(suitor == <span class="keyword">null</span>)&#123;</span><br><span class="line">            suitor = <span class="keyword">new</span> Suitor();</span><br><span class="line">        &#125;</span><br><span class="line">        suitor.sendLoveLetter(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuitorTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Girl girl = <span class="keyword">new</span> Girl(<span class="string">"晓双"</span>);</span><br><span class="line">        <span class="comment">//在这里送情书的实际上是追求者，而不是追求者代理</span></span><br><span class="line">        SuitorProxy proxy = <span class="keyword">new</span> SuitorProxy();</span><br><span class="line">        proxy.sendLoveLetter(girl.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>静态代理中从客户端的角度来看，客户端是不知道实际的追求者的，但是情书还是来自于追求者，而不是其代理。</strong></p>
+<h2 id="四、动态代理"><a href="#四、动态代理" class="headerlink" title="四、动态代理"></a>四、动态代理</h2><p>动态代理利用了JDK API，动态地在内存中构建代理对象，从而实现对目标对象的代理功能。动态代理又被称为JDK代理或接口代理。</p>
+<p><strong>1、静态代理与动态代理的区别主要在：</strong><br> （1）静态代理在编译时就已经实现，编译完成后代理类是一个实际的class文件<br> （2）动态代理是在运行时动态生成的，即编译完成后没有实际的class文件，而是在运行时动态生成类字节码，并加载到JVM中。</p>
+<p><strong>2、代码实现</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//被追女孩子和上述类同</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*小时候看到喜欢的女孩子，就会给写情书，但是人怂又不敢亲自去送，因此只好请求别人代理我去送。</span></span><br><span class="line"><span class="comment">*上述事实是一个代理模式的简单应用，一起来来看看如何让别人来代理你去送情书</span></span><br><span class="line"><span class="comment">*公共接口，仅仅是去掉了方法参数 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoveLetter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendLoveLetter</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 追求者类</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Suitor</span> <span class="keyword">implements</span> <span class="title">LoveLetter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Girl girl;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Suitor</span><span class="params">(Girl girl)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.girl = girl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendLoveLetter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"哈喽，"</span>+girl.getName()+<span class="string">"这是亚峰给你的情书！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//事件处理器，必须实现InvocationHandeler接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InvocationHandlerImp</span>  <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="comment">//target即为需要被代理的对象</span></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InvocationHandlerImp</span><span class="params">(Object target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"开始送情书"</span>);</span><br><span class="line">        Object object = method.invoke(target);</span><br><span class="line">        System.out.println(<span class="string">"情书送出去了"</span>);</span><br><span class="line">        <span class="keyword">return</span> object;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">测试类</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuitorTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Girl girl = <span class="keyword">new</span> Girl(<span class="string">"晓双"</span>);</span><br><span class="line">        Suitor suitor = <span class="keyword">new</span> Suitor(girl);</span><br><span class="line">        InvocationHandlerImp invocationHandlerImp = <span class="keyword">new</span> InvocationHandlerImp(suitor);</span><br><span class="line">        LoveLetter loveLetter = (LoveLetter) Proxy.newProxyInstance(LoveLetter.class.getClassLoader(),<span class="keyword">new</span> Class[]&#123;LoveLetter.class&#125;,invocationHandlerImp);</span><br><span class="line">        loveLetter.sendLoveLetter();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">结果：</span><br><span class="line">开始送情书</span><br><span class="line">哈喽，晓双这是亚峰给你的情书！</span><br><span class="line">情书送出去了</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="五、CGLIB代理"><a href="#五、CGLIB代理" class="headerlink" title="五、CGLIB代理"></a>五、CGLIB代理</h2><p><strong>cglib is a powerful, high performance and quality Code Generation Library. It can extend JAVA classes and implement interfaces at runtime.<br>cglib (Code Generation Library )是一个第三方代码生成类库，运行时在内存中动态生成一个子类对象从而实现对目标对象功能的扩展。</strong></p>
+<p><strong>1、cglib特点</strong></p>
+<p>（1）JDK的动态代理有一个限制，就是使用动态代理的对象必须实现一个或多个接口。<br> （2）如果想代理没有实现接口的类，就可以使用CGLIB实现。<br> （3）CGLIB是一个强大的高性能的代码生成包，它可以在运行期扩展Java类与实现Java接口。它广泛的被许多AOP的框架使用，例如Spring AOP和dynaop，为他们提供方法的interception（拦截）。<br> （4）CGLIB包的底层是通过使用一个小而快的字节码处理框架ASM，来转换字节码并生成新的类。不鼓励直接使用ASM，因为它需要你对JVM内部结构包括class文件的格式和指令集都很熟悉。</p>
+<p><strong>2、cglib与动态代理最大的区别就是</strong></p>
+<p> （1）使用动态代理的对象必须实现一个或多个接口<br> （2）使用cglib代理的对象则无需实现接口，达到代理类无侵入。</p>
 
 
         
@@ -557,7 +592,7 @@
           
             <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
           
-            <a href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"> <i class="fa fa-tag"></i> 面试知识点</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"> <i class="fa fa-tag"></i> 设计模式</a>
           
         </div>
       
@@ -570,15 +605,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%EF%BC%88Strategy%EF%BC%89%E6%A8%A1%E5%BC%8F/" rel="next" title="软件设计模式之策略（Strategy）模式">
+                <i class="fa fa-chevron-left"></i> 软件设计模式之策略（Strategy）模式
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/%E5%8F%98%E9%87%8F%E5%9C%A8Java%E4%B8%AD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/" rel="prev" title="变量在Java中的运行顺序">
-                变量在Java中的运行顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -655,8 +690,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1126,6 +1170,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、代理模式"><span class="nav-number">1.</span> <span class="nav-text">一、代理模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代理模式结构图"><span class="nav-number">2.</span> <span class="nav-text">二、代理模式结构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、静态代理"><span class="nav-number">3.</span> <span class="nav-text">三、静态代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、动态代理"><span class="nav-number">4.</span> <span class="nav-text">四、动态代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、CGLIB代理"><span class="nav-number">5.</span> <span class="nav-text">五、CGLIB代理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1713,35 +1773,38 @@ show_date_time();
   
   <script>
     
-    function addCount(Counter) {
+    function showTime(Counter) {
+      var entries = [];
       var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
 
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
         .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
-                .done(function() {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function() {
-                  console.log('Failed to create');
-                });
-            
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1766,9 +1829,9 @@ show_date_time();
             });
           };
           
-            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-            if (localhost.test(document.URL)) return;
-            addCount(Counter);
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
           
         });
     });
